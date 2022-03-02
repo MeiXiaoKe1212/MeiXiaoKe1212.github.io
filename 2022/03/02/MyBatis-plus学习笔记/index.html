@@ -91,7 +91,7 @@
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Roboto Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -469,7 +469,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  7
                 </span>
               
             </div>
@@ -541,7 +541,7 @@
 <p><strong>application.yml</strong></p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">    <span class="comment">#数据源</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">com.zaxxer.hikari.HikariDataSource</span></span><br><span class="line">    <span class="comment">#驱动</span></span><br><span class="line">    <span class="attr">driver-class-name:</span> <span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">jdbc:mysql://localhost:3306/mybatis_plus?serverTimezone=GMT%2B8&amp;characterEncoding=utf-8&amp;useSSL=false</span></span><br><span class="line">    <span class="attr">username:</span> <span class="string">root</span></span><br><span class="line">    <span class="attr">password:</span> <span class="string">root</span></span><br></pre></td></tr></table></figure>
 
-<p>1、驱动类driver-class-name<br>spring boot 2.0（内置jdbc5驱动），驱动类使用：driver-class-name: com.mysql.cj.jdbc.Driver<br>url: jdbc:mysql://localhost:3306/mybatis_plus?characterEncoding=utf-8&amp;useSSL=false<br>username: root<br>password: root<br>driver-class-name: com.mysql.jdbc.Driver<br>spring boot 2.1及以上（内置jdbc8驱动），驱动类使用：<br>driver-class-name: com.mysql.cj.jdbc.Driver<br>否则运行测试用例的时候会有 WARN 信息<br>2、连接地址url<br>MySQL5.7版本的url：<br>jdbc:mysql://localhost:3306/mybatis_plus?characterEncoding=utf-8&amp;useSSL=false<br>MySQL8.0版本的url：<br>jdbc:mysql://localhost:3306/mybatis_plus?serverTimezone=GMT%2B8&amp;characterEncoding=utf-8&amp;useSSL=false<br>否则运行测试用例报告如下错误：<br>java.sql.SQLException: The server time zone value ‘ÖÐ¹ú±ê×¼Ê±¼ä’ is unrecognized or represents more</p>
+<p>1、驱动类driver-class-name<br>spring boot 2.0（内置jdbc5驱动），驱动类使用：driver-class-name: com.mysql.cj.jdbc.Driver<br>url: jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;mybatis_plus?characterEncoding&#x3D;utf-8&amp;useSSL&#x3D;false<br>username: root<br>password: root<br>driver-class-name: com.mysql.jdbc.Driver<br>spring boot 2.1及以上（内置jdbc8驱动），驱动类使用：<br>driver-class-name: com.mysql.cj.jdbc.Driver<br>否则运行测试用例的时候会有 WARN 信息<br>2、连接地址url<br>MySQL5.7版本的url：<br>jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;mybatis_plus?characterEncoding&#x3D;utf-8&amp;useSSL&#x3D;false<br>MySQL8.0版本的url：<br>jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;mybatis_plus?serverTimezone&#x3D;GMT%2B8&amp;characterEncoding&#x3D;utf-8&amp;useSSL&#x3D;false<br>否则运行测试用例报告如下错误：<br>java.sql.SQLException: The server time zone value ‘ÖÐ¹ú±ê×¼Ê±¼ä’ is unrecognized or represents more</p>
 <ul>
 <li>创建实体类</li>
 </ul>
