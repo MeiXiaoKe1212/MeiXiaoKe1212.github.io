@@ -1,0 +1,430 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Java反射专题笔记 | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Java反射专题笔记 September 18, 2022  https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1g84y1F7df   反射能做什么？我们知道反射机制允许程序在运行时取得任何一个已知名称的class的内部信息，包括包括其modifiers(修饰符)，fields(属性)，methods(方法)等，并可于运行时改变fields内容或调用methods。那么我们便可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java反射专题笔记">
+<meta property="og:url" content="http://example.com/2022/10/07/Java%E5%8F%8D%E5%B0%84%E4%B8%93%E9%A2%98%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Java反射专题笔记 September 18, 2022  https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1g84y1F7df   反射能做什么？我们知道反射机制允许程序在运行时取得任何一个已知名称的class的内部信息，包括包括其modifiers(修饰符)，fields(属性)，methods(方法)等，并可于运行时改变fields内容或调用methods。那么我们便可以">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-07T12:46:25.000Z">
+<meta property="article:modified_time" content="2022-10-07T11:27:22.637Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/10/07/Java%E5%8F%8D%E5%B0%84%E4%B8%93%E9%A2%98%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Java反射专题笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-07 19:27:22'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Java反射专题笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-10-07T12:46:25.000Z" title="Created 2022-10-07 20:46:25">2022-10-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-10-07T11:27:22.637Z" title="Updated 2022-10-07 19:27:22">2022-10-07</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Java反射专题笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Java反射专题笔记"><a href="#Java反射专题笔记" class="headerlink" title="Java反射专题笔记"></a>Java反射专题笔记</h1><blockquote>
+<p>September 18, 2022 </p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1g84y1F7df">https://www.bilibili.com/video/BV1g84y1F7df</a></p>
+</blockquote>
+<hr>
+<h2 id="反射能做什么？"><a href="#反射能做什么？" class="headerlink" title="反射能做什么？"></a>反射能做什么？</h2><p>我们知道反射机制允许程序在运行时取得任何一个已知名称的class的内部信息，包括包括其modifiers(修饰符)，fields(属性)，methods(方法)等，并可于运行时改变fields内容或调用methods。那么我们便可以更灵活的编写代码，代码可以在运行时装配，无需在组件之间进行源代码链接，降低代码的耦合度；还有动态代理的实现等等；但是需要注意的是反射使用不当会造成很高的资源消耗！</p>
+<h2 id="反射入门"><a href="#反射入门" class="headerlink" title="反射入门"></a>反射入门</h2><p>现在有一个Cat类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Cat</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;加菲猫&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="variable">age</span> <span class="operator">=</span> <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Cat</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Cat</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">hi</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;hi&quot;</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果我们想要调用hi( )方法，那么传统的写法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Cat</span> <span class="variable">cat</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cat</span>();</span><br><span class="line">cat.hi();</span><br></pre></td></tr></table></figure>
+
+<p>而利用反射，则可以这样写：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Class&lt;?&gt; aClass = Class.forName(<span class="string">&quot;com.mxk.Cat&quot;</span>);</span><br><span class="line"><span class="type">Object</span> <span class="variable">object</span> <span class="operator">=</span> aClass.newInstance();</span><br><span class="line"><span class="type">Method</span> <span class="variable">method</span> <span class="operator">=</span> aClass.getMethod(<span class="string">&quot;hi&quot;</span>);</span><br><span class="line">method.invoke(object);</span><br></pre></td></tr></table></figure>
+
+<p>传统方法：对象.方法() </p>
+<p>反射机制：方法.invoke(对象)</p>
+<ul>
+<li><p>Class.forName( )</p>
+<p>  <img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302038461.png" alt="Untitled"></p>
+</li>
+<li><p>newInstance( )</p>
+<p>  <img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302038478.png" alt="Untitled"></p>
+</li>
+<li><p>getMethod( )</p>
+<p>  <img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302038576.png" alt="Untitled"></p>
+</li>
+<li><p>method.invoke( )</p>
+<p>  <img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302038632.png" alt="Untitled"></p>
+</li>
+</ul>
+<hr>
+<h2 id="反射的原理"><a href="#反射的原理" class="headerlink" title="反射的原理"></a>反射的原理</h2><p>反射机制允许程序在执行期借助于ReflectionAPI取得任何类的内部信息（比如成员变量，构造器，成员方法等等)，并能操作对象的属性及方法。反射在设计模式和框架底层都会用到。</p>
+<p>加载完类之后，在堆中就产生了一个Class类型的对象（<strong>一个类只有一个Class对象</strong>），这个对象包含了类的完整结构信息。通过这个对象得到类的结构。这个对象就像一面镜子，透过这个镜子看到类的结构，所以，形象的称之为：反射</p>
+<p><strong>示意图：</strong></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302039692.png" alt="Untitled"></p>
+<hr>
+<p><strong>反射可以完成哪些东西？</strong></p>
+<p>1.在运行时判断任意一个对象所属的类<br>2.在运行时构造任意一个类的对象<br>3.在运行时得到任意一个类所具有的成员变量和方法<br>4.在运行时调用任意一个对象的成员变量和方法<br>5.生成动态代理</p>
+<hr>
+<p><strong>反射相关的类</strong>：</p>
+<p>1.java.lang.Class: 代表一个类，Class对象表示某个类加载后在堆中的对象<br>2.java.lang.reflect.Method: 代表类的方法，Method对象表示某个类的方法<br>3.java.lang.reflect.Field: 代表类的成员变量，Field对象表示某个类的成员变量<br>4.java.lang.reflect.Constructor: 代表类的构造方法，Constructor)对象表示构造器</p>
+<p>关于Field：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Class&lt;?&gt; aClass = Class.forName(<span class="string">&quot;com.mxk.Cat&quot;</span>);</span><br><span class="line"><span class="type">Object</span> <span class="variable">object</span> <span class="operator">=</span> aClass.newInstance();</span><br><span class="line"><span class="type">Method</span> <span class="variable">method</span> <span class="operator">=</span> aClass.getMethod(<span class="string">&quot;hi&quot;</span>);</span><br><span class="line">method.invoke(object);</span><br><span class="line"><span class="type">Field</span> <span class="variable">field</span> <span class="operator">=</span> aClass.getField(<span class="string">&quot;name&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302039410.png" alt="Untitled"></p>
+<p><strong>getField( )不能拿到私有方法</strong> </p>
+<p>要获取属性值，使用  属性成员对象.get(实例)  ：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Class&lt;?&gt; aClass = Class.forName(<span class="string">&quot;com.mxk.Cat&quot;</span>);</span><br><span class="line"><span class="type">Object</span> <span class="variable">object</span> <span class="operator">=</span> aClass.newInstance();</span><br><span class="line"><span class="type">Method</span> <span class="variable">method</span> <span class="operator">=</span> aClass.getMethod(<span class="string">&quot;hi&quot;</span>);</span><br><span class="line">method.invoke(object);</span><br><span class="line"><span class="type">Field</span> <span class="variable">ageField</span> <span class="operator">=</span> aClass.getField(<span class="string">&quot;age&quot;</span>);</span><br><span class="line"><span class="type">int</span> <span class="variable">age</span> <span class="operator">=</span> (<span class="type">int</span>) ageField.get(object);</span><br><span class="line">System.out.println(<span class="string">&quot;根据反射拿到的age属性值为：&quot;</span> + age);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302039291.png" alt="Untitled"></p>
+<p>关于Constructor：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Cat</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;加菲猫&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="variable">age</span> <span class="operator">=</span> <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Cat</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Cat</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">hi</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;hi&quot;</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//无参</span></span><br><span class="line"><span class="type">Constructor</span> <span class="variable">constructor</span> <span class="operator">=</span> aClass.getConstructor();</span><br><span class="line">System.out.println(constructor);</span><br><span class="line"></span><br><span class="line"><span class="comment">//有参</span></span><br><span class="line"><span class="type">Constructor</span> <span class="variable">constructor2</span> <span class="operator">=</span> aClass.getConstructor(String.class);</span><br><span class="line">System.out.println(constructor2);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302039044.png" alt="Untitled"></p>
+<hr>
+<p><strong>反射的优缺点：</strong></p>
+<ol>
+<li>优点：可以动态的创建和使用对象（也是框架底层核心），使用灵活，没有反射机制，框架技术就失去底层支撑。</li>
+<li>缺点：使用反射基本是解释执行，对执行速度有影响。</li>
+</ol>
+<p>测试一下传统方法和使用反射的速度区别：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestSpeed</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m1</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">long</span> <span class="variable">start</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100000000</span>; i++) &#123;</span><br><span class="line">            <span class="type">Cat</span> <span class="variable">cat</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cat</span>();</span><br><span class="line">            cat.hi();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">long</span> <span class="variable">end</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">        System.out.println(<span class="string">&quot;传统方式耗时&quot;</span> + (end - start));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m2</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">Class</span> <span class="variable">catClass</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;com.mxk.Cat&quot;</span>);</span><br><span class="line">        <span class="type">long</span> <span class="variable">start</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">        <span class="type">Object</span> <span class="variable">object</span> <span class="operator">=</span> catClass.newInstance();</span><br><span class="line">        <span class="type">Method</span> <span class="variable">hi</span> <span class="operator">=</span> catClass.getMethod(<span class="string">&quot;hi&quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100000000</span>; i++) &#123;</span><br><span class="line">            hi.invoke(object);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">long</span> <span class="variable">end</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">        System.out.println(<span class="string">&quot;反射方式耗时&quot;</span> + (end - start));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>分别循环调用一亿次</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TestSpeed.m1();</span><br><span class="line">TestSpeed.m2();</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302039702.png" alt="Untitled"></p>
+<p>可以看到，反射的速度相对传统方式是慢的</p>
+<p><strong>反射为什么慢？</strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ysocean/p/6516248.html">Java 反射详解</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xqlovetyj/article/details/82798864">反射为什么慢_xqlovetyj的博客-CSDN博客_反射慢的原因</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_28204635/article/details/124342306?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-124342306-blog-82798864.pc_relevant_multi_platform_whitelistv6&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~CTRLIST~Rate-1-124342306-blog-82798864.pc_relevant_multi_platform_whitelistv6&utm_relevant_index=1">反射慢吗？慢多少？什么原因慢? 如何解决?</a></p>
+<p>1.Method和Field、Constructor对象都有setAccessible0方法。<br>2.setAccessible作用是启动和禁用访问安全检查的开关。<br>3.参数值为true表示反射的对象在使用时取消访问检查，提高反射的效率。<br>    参数值为false则表示反射的对象执行访问检查。</p>
+<p>简单优化(关闭访问检查)：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">m3</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    <span class="type">Class</span> <span class="variable">catClass</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;com.mxk.Cat&quot;</span>);</span><br><span class="line">    <span class="type">long</span> <span class="variable">start</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">    <span class="type">Object</span> <span class="variable">object</span> <span class="operator">=</span> catClass.newInstance();</span><br><span class="line">    <span class="type">Method</span> <span class="variable">hi</span> <span class="operator">=</span> catClass.getMethod(<span class="string">&quot;hi&quot;</span>);</span><br><span class="line"><span class="comment">//关闭访问检查</span></span><br><span class="line">hi.setAccessible(<span class="literal">true</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">100000000</span>; i++) &#123;</span><br><span class="line">        hi.invoke(object);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">long</span> <span class="variable">end</span> <span class="operator">=</span> System.currentTimeMillis();</span><br><span class="line">    System.out.println(<span class="string">&quot;关闭访问检查后的反射方式耗时&quot;</span> + (end - start));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302039271.png" alt="Untitled"></p>
+<hr>
+<h2 id="反射相关类"><a href="#反射相关类" class="headerlink" title="反射相关类"></a>反射相关类</h2><p>Class类图：</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302039139.png" alt="Untitled"></p>
+<p>1.Class也是类，因此也继承Object类。<br>2.Class类对象不是new出来的，而是系统创建的。<br>3.对于某个类的Class类对象，在内存中只有一份，因为类只加载一次。</p>
+<p>关于GenericDeclaration接口：实现后可以用getClass( ).getTypeParameters( )获取它的泛型。</p>
+<p>例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Class</span> <span class="variable">cls1</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;com.mxk.Cat&quot;</span>);</span><br><span class="line"><span class="type">Class</span> <span class="variable">cls2</span> <span class="operator">=</span> Class.forName(<span class="string">&quot;com.mxk.Cat&quot;</span>);</span><br><span class="line">System.out.println(cls1.hashCode());</span><br><span class="line">System.out.println(cls2.hashCode());</span><br><span class="line">System.out.println(cls1.equals(cls2));</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302039327.png" alt="Untitled"></p>
+<p>4.每个类的实例都会记得自己是由哪个Class实例所生成。</p>
+<p>同样的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Cat</span> <span class="variable">cat1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cat</span>();</span><br><span class="line"><span class="type">Cat</span> <span class="variable">cat2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Cat</span>();</span><br><span class="line"><span class="type">Class</span> <span class="variable">aCls1</span> <span class="operator">=</span> cat1.getClass();</span><br><span class="line"><span class="type">Class</span> <span class="variable">aCls2</span> <span class="operator">=</span> cat2.getClass();</span><br><span class="line">System.out.println(aCls1.hashCode());</span><br><span class="line">System.out.println(aCls2.hashCode());</span><br><span class="line">System.out.println(aCls1.equals(aCls2));</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302039215.png" alt="Untitled"></p>
+<p>5.通过Class对象可以完整地得到一个类的完整结构，通过一系列API。</p>
+<p>Class类的常用方法：</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302039279.png" alt="Untitled"></p>
+<p>6.Class对象是存放在堆的。<br>7.类的字节码二进制数据，是放在方法区的，有的地方称为类的元数据（包括方法代码，变量名，方法名，访问权限等等)</p>
+<p>加载类过后，在方法区里面，会得到一个字节码二进制文件，具体来说就是：当我们把类加载完毕以后，除了会生成一个Class类对象在堆里面，同时在方法区还会生成类的字节码二进制数据，把这个二进制数据也称为元数据，而在堆里面会产生一个类对象，它是一个数据结构，数据结构里面就会把成员变量、成员方法等当成一个对象来操作。二进制操作起来会比较麻烦，但是对于数据结构操作起来就更方便了。</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302039493.png" alt="Untitled"></p>
+<p><strong>详情参考：</strong></p>
+<p><a target="_blank" rel="noopener" href="http://www.zhihu.com/question/38496907">hotpot java虚拟机Class对象是放在 方法区 还是堆中 ？</a></p>
+<hr>
+<h2 id="Class常用方法"><a href="#Class常用方法" class="headerlink" title="Class常用方法"></a>Class常用方法</h2><p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302039068.png" alt="Untitled"></p>
+<p><strong>注意：</strong></p>
+<p>该&lt;?&gt;表示不确定的java类型，意思就是根据传入的类路径参数不能确定是哪个类，可以保留也可以删除。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> class_;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.mxk.Car;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Field;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> GodAiro</span></span><br><span class="line"><span class="comment"> * Creation Time: 2022/7/17 17:21.</span></span><br><span class="line"><span class="comment"> * 演示Class类的一些常用方法</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@SuppressWarnings(&#123;&quot;all&quot;&#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Class02</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">classAllPath</span> <span class="operator">=</span> <span class="string">&quot;com.mxk.Car&quot;</span>;</span><br><span class="line">        <span class="comment">//1.获取Car类对应的Class对象</span></span><br><span class="line">        <span class="comment">//&lt;?&gt; 这个问号表示不确定的Java类型，也就是说将来的对象到底是表示Car还是Dog还是Person，这是不确定的，不写也可以，写也可以</span></span><br><span class="line">        Class&lt;?&gt; cls = Class.forName(classAllPath);</span><br><span class="line">        <span class="comment">//2.输出Cls</span></span><br><span class="line">        System.out.println(cls);<span class="comment">//显示cls对象是属于哪个类的Class对象，但是要清楚，这个cls不是一个真正的Car对象，不要有强转这个操作。</span></span><br><span class="line">        System.out.println(<span class="string">&quot;运行类型:&quot;</span> + cls.getClass()); <span class="comment">//输出运行类型 java.lang.Class</span></span><br><span class="line">        <span class="comment">//3.得到包名</span></span><br><span class="line">        System.out.println(<span class="string">&quot;包名:&quot;</span> + cls.getPackage().getName());</span><br><span class="line">        <span class="comment">//4.得到全类名</span></span><br><span class="line">        System.out.println(<span class="string">&quot;类名:&quot;</span> + cls.getName());</span><br><span class="line">        <span class="comment">//5.通过cls创建一个对象实例</span></span><br><span class="line">        <span class="type">Car</span> <span class="variable">car</span> <span class="operator">=</span> (Car) cls.newInstance();</span><br><span class="line">        System.out.println(car);</span><br><span class="line">        <span class="comment">//6.通过反射获取属性，比如想获得brand属性</span></span><br><span class="line">        <span class="type">Field</span> <span class="variable">brand</span> <span class="operator">=</span> cls.getField(<span class="string">&quot;brand&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;得到的属性:&quot;</span> + brand.get(car));<span class="comment">//宝马</span></span><br><span class="line">        <span class="comment">//7.通过反射给属性赋值</span></span><br><span class="line">        brand.set(car, <span class="string">&quot;奔驰&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;赋值后的属性:&quot;</span> + brand.get(car));<span class="comment">//奔驰</span></span><br><span class="line">        <span class="comment">//8.遍历得到所有属性(字段)</span></span><br><span class="line">        System.out.println(<span class="string">&quot;=======所有字段属性=======&quot;</span>);</span><br><span class="line">        Field[] fields = cls.getFields();</span><br><span class="line">        <span class="keyword">for</span> (Field f : fields) &#123;</span><br><span class="line">            System.out.println(f.getName());<span class="comment">//名称</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302039398.png" alt="Untitled"></p>
+<hr>
+<h2 id="获取Class类对象的不同方式"><a href="#获取Class类对象的不同方式" class="headerlink" title="获取Class类对象的不同方式"></a>获取Class类对象的不同方式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">getClass_</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException &#123;</span><br><span class="line">        <span class="comment">//1. Class.forName</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">classAllPath</span> <span class="operator">=</span> <span class="string">&quot;com.mxk.Car&quot;</span>; <span class="comment">//通过读取配置文件获取</span></span><br><span class="line">        Class&lt;?&gt; cls1 = Class.forName(classAllPath);</span><br><span class="line">        System.out.println(cls1);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2. 类名.class , 应用场景: 用于参数传递</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">cls2</span> <span class="operator">=</span> Car.class;</span><br><span class="line">        System.out.println(cls2);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3. 对象.getClass(), 应用场景，有对象实例</span></span><br><span class="line">        <span class="type">Car</span> <span class="variable">car</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Car</span>();</span><br><span class="line">        <span class="type">Class</span> <span class="variable">cls3</span> <span class="operator">=</span> car.getClass();</span><br><span class="line">        System.out.println(cls3);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4. 通过类加载器【4 种】来获取到类的Class 对象</span></span><br><span class="line">        <span class="comment">//(1)先得到类加载器car</span></span><br><span class="line">        <span class="type">ClassLoader</span> <span class="variable">classLoader</span> <span class="operator">=</span> car.getClass().getClassLoader();</span><br><span class="line">        <span class="comment">//(2)通过类加载器得到Class 对象</span></span><br><span class="line">        <span class="type">Class</span> <span class="variable">cls4</span> <span class="operator">=</span> classLoader.loadClass(classAllPath);</span><br><span class="line">        System.out.println(cls4);</span><br><span class="line">        <span class="comment">//cls1 , cls2 , cls3 , cls4 其实是同一个对象</span></span><br><span class="line">        System.out.println(cls1.hashCode());</span><br><span class="line">        System.out.println(cls2.hashCode());</span><br><span class="line">        System.out.println(cls3.hashCode());</span><br><span class="line">        System.out.println(cls4.hashCode());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//5. 基本数据(int, char,boolean,float,double,byte,long,short) 按如下方式得到Class 类对象</span></span><br><span class="line">        Class&lt;Integer&gt; integerClass = <span class="type">int</span>.class;</span><br><span class="line">        Class&lt;Character&gt; characterClass = <span class="type">char</span>.class;</span><br><span class="line">        Class&lt;Boolean&gt; booleanClass = <span class="type">boolean</span>.class;</span><br><span class="line">        System.out.println(integerClass);<span class="comment">//int</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//6. 基本数据类型对应的包装类，可以通过.TYPE 得到Class 类对象</span></span><br><span class="line">        Class&lt;Integer&gt; type1 = Integer.TYPE;</span><br><span class="line">        Class&lt;Character&gt; type2 = Character.TYPE; <span class="comment">//其它包装类BOOLEAN, DOUBLE, LONG,BYTE 等待</span></span><br><span class="line">        System.out.println(type1);</span><br><span class="line">        System.out.println(integerClass.hashCode());<span class="comment">//?</span></span><br><span class="line">        System.out.println(type1.hashCode());<span class="comment">//?</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="哪些类型有Class对象"><a href="#哪些类型有Class对象" class="headerlink" title="哪些类型有Class对象"></a>哪些类型有Class对象</h2><p>1.外部类，成员内部类，静态内部类，局部内部类，匿名内部类<br>2.interface:接口<br>3.数组<br>4.enum:枚举<br>5.annotation:注解<br>6.基本数据类型<br>7.void</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AllTypeClass</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Class&lt;String&gt; cls1 = String.class;<span class="comment">//外部类</span></span><br><span class="line">        Class&lt;Serializable&gt; cls2 = Serializable.class;<span class="comment">//接口</span></span><br><span class="line">        Class&lt;Integer[]&gt; cls3 = Integer[].class;<span class="comment">//数组</span></span><br><span class="line">        Class&lt;<span class="type">float</span>[][]&gt; cls4 = <span class="type">float</span>[][].class;<span class="comment">//二维数组</span></span><br><span class="line">        Class&lt;Deprecated&gt; cls5 = Deprecated.class;<span class="comment">//注解</span></span><br><span class="line">        Class&lt;Thread.State&gt; cls6 = Thread.State.class;<span class="comment">//枚举</span></span><br><span class="line">        Class&lt;Long&gt; cls7 = <span class="type">long</span>.class;<span class="comment">//基本数据类型</span></span><br><span class="line">        Class&lt;Void&gt; cls8 = <span class="keyword">void</span>.class;<span class="comment">//void 数据类型</span></span><br><span class="line">        Class&lt;Class&gt; cls9 = Class.class;<span class="comment">//</span></span><br><span class="line">        System.out.println(cls1);</span><br><span class="line">        System.out.println(cls2);</span><br><span class="line">        System.out.println(cls3);</span><br><span class="line">        System.out.println(cls4);</span><br><span class="line">        System.out.println(cls5);</span><br><span class="line">        System.out.println(cls6);</span><br><span class="line">        System.out.println(cls7);</span><br><span class="line">        System.out.println(cls8);</span><br><span class="line">        System.out.println(cls9);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302039307.png" alt="Untitled"></p>
+<hr>
+<h2 id="静态加载和动态加载"><a href="#静态加载和动态加载" class="headerlink" title="静态加载和动态加载"></a>静态加载和动态加载</h2><p>反射机制是java实现动态语言的关键，也就是通过反射实现类动态加载。<br>1.静态加载：编译时加载相关的类，如果没有则报错，依赖性太强。<br>2.动态加载：运行时加载需要的类，如果运行时不用该类，即使不存在该类，则不报错，降低了依赖性。</p>
+<p>类的加载时机：</p>
+<p>1.当创建对象时(new)——静态加载<br>2.当子类被加载时，父类也加载——静态加载<br>3.调用类中的静态成员时——静态加载<br>4.通过反射——动态加载</p>
+<p>类的加载过程图：</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302039806.png" alt="Untitled"></p>
+<p>类加载各阶段完成任务</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302039860.png" alt="Untitled"></p>
+<h2 id="类的五个加载阶段"><a href="#类的五个加载阶段" class="headerlink" title="类的五个加载阶段"></a>类的五个<strong>加载阶段</strong></h2><p>JVM在该阶段的主要目的是将存节码从不同的数据源（可能是class文件、也可能是jar包，甚至网络)转化为二进制字节流加载到内存中，并生成一个代表该类的java.lang.Class对象</p>
+<p><strong>连接阶段-验证</strong></p>
+<p>1.目的是为了确保Cla55文件的字节流中包含的信息符合当前虚拟机的要求，并且不会危害虚拟机自身的安全。</p>
+<p>2.包括：文件格式验证（是否以魔数oxcafebabe开头）、元数据验证、字节码验证和符号引用验证。<br>3.可以考虑使用-Xverify:none参数来关闭大部分的类验证措施，缩短虚拟机类加载的时间。</p>
+<p><strong>连接阶段-准备</strong></p>
+<p>JVM会在该阶段对静态变量，分配内存并默认初始化（对应数据类型的默认初始值，如O、0L、nul、false等)。这些变量所使用的内存都将在方法区中进行分配。</p>
+<p><strong>连接阶段-解析</strong></p>
+<p>虚拟机将常量池内的符号引用替换为直接引用的过程。</p>
+<p><strong>Initialization（初始化）</strong></p>
+<p>1.到初始化阶段，才真正开始执行类中定义的Java程序代码，此阶段是执行<clinit>( )方法的过程。</p>
+<p>2.<clinit>( )方法是由编译器按语句在源文件中出现的顺序，依次自动收集类中的所有静态变量的赋值动作和静态代码块中的语句，并进行合并。<br>3.虚拟机会保证一个类的<clinit>( )方法在多线程环境中被正确地加锁、同步，如果多个线程同时去初始化一个类，那么只会有一个线程去执行这个类的<clinit>( )方法，其他线程都需要阻塞等待，直到活动线程执行<clinit>( )方法完毕。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> class_;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: MeiKoko</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2022/9/18  16:27</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Version</span> 1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ClassLoad03</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//1. 加载B 类，并生成B 的class 对象</span></span><br><span class="line">        <span class="comment">//2. 链接num = 0</span></span><br><span class="line">        <span class="comment">//3. 初始化阶段</span></span><br><span class="line">        <span class="comment">// 依次自动收集类中的所有静态变量的赋值动作和静态代码块中的语句,并合并</span></span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">            clinit() &#123;</span></span><br><span class="line"><span class="comment">                System.out.println(&quot;B 静态代码块被执行&quot;);</span></span><br><span class="line"><span class="comment">                //num = 300;</span></span><br><span class="line"><span class="comment">                num = 100;</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">            合并: num = 100</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">        <span class="comment">//new B();//类加载</span></span><br><span class="line">        <span class="comment">//System.out.println(B.num);//100, 如果直接使用类的静态属性，也会导致类的加载</span></span><br><span class="line">        <span class="comment">//看看加载类的时候，是有同步机制控制</span></span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">            protected Class&lt;?&gt; loadClass(String name, boolean resolve) throws ClassNotFoundException&#123;</span></span><br><span class="line"><span class="comment">                //正因为有这个机制，才能保证某个类在内存中, 只有一份Class 对象</span></span><br><span class="line"><span class="comment">                synchronized (getClassLoadingLock(name)) &#123;</span></span><br><span class="line"><span class="comment">                //....</span></span><br><span class="line"><span class="comment">                &#125;</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">        <span class="type">B</span> <span class="variable">b</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">B</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;B 静态代码块被执行&quot;</span>);</span><br><span class="line">        num = <span class="number">300</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">B</span><span class="params">()</span> &#123;<span class="comment">//构造器</span></span><br><span class="line">        System.out.println(<span class="string">&quot;B() 构造器被执行&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="通过反射获取类的结构信息-API"><a href="#通过反射获取类的结构信息-API" class="headerlink" title="通过反射获取类的结构信息 API"></a>通过反射获取类的结构信息 API</h2><p><strong>第一组：java.lang.Class</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>getName</td>
+<td>获取全类名</td>
+</tr>
+<tr>
+<td>getSimpleName</td>
+<td>获取简单类名</td>
+</tr>
+<tr>
+<td>getFields</td>
+<td>获取所有public修饰的属性，包含本类以及父类的</td>
+</tr>
+<tr>
+<td>getDeclaredFields</td>
+<td>获取本类中所有属性</td>
+</tr>
+<tr>
+<td>getMethods</td>
+<td>获取所有public修饰的方法，包含本类以及父类的</td>
+</tr>
+<tr>
+<td>getDeclaredMethods</td>
+<td>获取本类中所有方法</td>
+</tr>
+<tr>
+<td>getConstructors</td>
+<td>获取本类所有public修饰的构造器</td>
+</tr>
+<tr>
+<td>getDeclaredConstructors</td>
+<td>获取本类中所有构造器</td>
+</tr>
+<tr>
+<td>getPackage</td>
+<td>以Package形式返回包信息</td>
+</tr>
+<tr>
+<td>getSuperClass</td>
+<td>以Class形式返回父类信息</td>
+</tr>
+<tr>
+<td>getInterfaces</td>
+<td>以Class形式返回接口信息</td>
+</tr>
+<tr>
+<td>getAnnotations</td>
+<td>以Annotation形式返回注解信息</td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong>第二组：java.lang.reflect.Field</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>getModifiers</td>
+<td>以int形式返回修饰符[说明：默认修饰符是0，public是1，private是2，protected是4，static是8，final是16]，public(1)+static(8)&#x3D;9</td>
+</tr>
+<tr>
+<td>getType</td>
+<td>以Class形式返回类型</td>
+</tr>
+<tr>
+<td>getName</td>
+<td>返回属性名</td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong>第三组：java.lang.reflect.Method</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>getModifiers</td>
+<td>以int形式返回修饰符[说明：默认修饰符是0，public是1，private是2，protected是4，static是8，final是16]</td>
+</tr>
+<tr>
+<td>getReturnType</td>
+<td>以Class形式获取返回类型</td>
+</tr>
+<tr>
+<td>getName</td>
+<td>返回方法名</td>
+</tr>
+<tr>
+<td>getParameterTypes</td>
+<td>以Class[ ]返回参数类型数组</td>
+</tr>
+</tbody></table>
+<hr>
+<p><strong>第四组：java.lang.reflect.Constructor</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>getModifiers</td>
+<td>以int形式返回修饰符[说明：默认修饰符是0，public是1，private是2，protected是4，static是8，final是16]</td>
+</tr>
+<tr>
+<td>getName</td>
+<td>返回构造器名（全类名）</td>
+</tr>
+<tr>
+<td>getParameterTypes</td>
+<td>以Class[ ]返回参数类型数组</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="通过反射创建对象-破解私有构造器"><a href="#通过反射创建对象-破解私有构造器" class="headerlink" title="通过反射创建对象(破解私有构造器)"></a>通过反射创建对象(破解私有构造器)</h2><p>1.方式一：调用类中的public修饰的无参构造器</p>
+<p>2.方式二：调用类中的指定构造器</p>
+<p>3.Class类相关方法<br>newlnstance:调用类中的无参构造器，获取对应类的对象<br>getConstructor(Class.clazz):根据参数列表，获取对应的public构造器对象<br>getDecalaredConstructor(Class.clazz):根据参数列表，获取对应的所有构造器对象</p>
+<p>4.Constructor类相关方法<br>setAccessible:暴破<br>newlnstance(Object…obj):调用构造器</p>
+<p><strong>案例：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="variable">age</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> <span class="string">&quot;韩顺平教育&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">User</span><span class="params">()</span> &#123;<span class="comment">//无参public</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">User</span><span class="params">(String name)</span> &#123;<span class="comment">//public 的有参构造器</span></span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">User</span><span class="params">(<span class="type">int</span> age, String name)</span> &#123;<span class="comment">//private 有参构造器</span></span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;User [age=&quot;</span> + age + <span class="string">&quot;, name=&quot;</span> + name + <span class="string">&quot;]&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> class_;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Constructor;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: MeiKoko</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: 2022/9/18  16:51</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Version</span> 1.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ReflectCreateInstance</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">//1. 先获取到User 类的Class 对象</span></span><br><span class="line">        Class&lt;?&gt; userClass = Class.forName(<span class="string">&quot;com.mxk.User&quot;</span>);</span><br><span class="line">        <span class="comment">//2. 通过public 的无参构造器创建实例</span></span><br><span class="line">        <span class="type">Object</span> <span class="variable">o</span> <span class="operator">=</span> userClass.newInstance();</span><br><span class="line">        System.out.println(o);</span><br><span class="line">        <span class="comment">//3. 通过public 的有参构造器创建实例</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            constructor 对象就是</span></span><br><span class="line"><span class="comment">            public User(String name) &#123;//public 的有参构造器</span></span><br><span class="line"><span class="comment">                this.name = name;</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        Constructor&lt;?&gt; constructor = userClass.getConstructor(String.class);</span><br><span class="line">        <span class="comment">// 通过该构造器传入参数创建实例</span></span><br><span class="line">        <span class="type">Object</span> <span class="variable">mxk</span> <span class="operator">=</span> constructor.newInstance(<span class="string">&quot;mxk&quot;</span>);</span><br><span class="line">        System.out.println(mxk);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4. 通过private的有参构造器创建实例</span></span><br><span class="line">        Constructor&lt;?&gt; privateConstructor = userClass.getDeclaredConstructor(<span class="type">int</span>.class, String.class);</span><br><span class="line">        <span class="comment">// 使用暴力破解</span></span><br><span class="line">				privateConstructor.setAccessible(<span class="literal">true</span>);</span><br><span class="line">        <span class="type">Object</span> <span class="variable">tbh</span> <span class="operator">=</span> privateConstructor.newInstance(<span class="number">100</span>, <span class="string">&quot;唐伯虎&quot;</span>);</span><br><span class="line">        System.out.println(tbh);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302039516.png" alt="Untitled"></p>
+<p>可以使用getDeclaredConstructor( )方法获取私有构造器进行实例化对象，因此，在反射面前，一切都是纸老虎！</p>
+<hr>
+<h2 id="通过反射获取私有属性"><a href="#通过反射获取私有属性" class="headerlink" title="通过反射获取私有属性"></a>通过反射获取私有属性</h2><p>1.根据属性名获取Field对象 Field f&#x3D;clazz对象.getDeclaredField(属性名)：<br>2.暴破：f.setAccessible(true);&#x2F;f是Field<br>3.访问f.set(o,值);&#x2F;o表示对象    syso(f.get(o);&#x2F;o表示对象<br>4.注意：如果是静态属性，则set和get中的参数o,可以写成null</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Class&lt;?&gt; cls = Class.forName(<span class="string">&quot;com.mxk.Student&quot;</span>);</span><br><span class="line"><span class="type">Object</span> <span class="variable">object</span> <span class="operator">=</span> cls.newInstance();</span><br><span class="line"><span class="type">Field</span> <span class="variable">age</span> <span class="operator">=</span> cls.getField(<span class="string">&quot;age&quot;</span>);</span><br><span class="line">age.set(object, <span class="number">88</span>);</span><br><span class="line">System.out.println(object);</span><br><span class="line"><span class="type">Field</span> <span class="variable">name</span> <span class="operator">=</span> cls.getDeclaredField(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">name.setAccessible(<span class="literal">true</span>);</span><br><span class="line">name.set(object, <span class="string">&quot;mxk&quot;</span>);</span><br><span class="line">System.out.println(object);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202209302039827.png" alt="Untitled"></p>
+<hr>
+<p>通过反射调用私有方法</p>
+<p>1.根据方法名和参数列表获取Method方法对象：Method m&#x3D;clazz.getDeclaredMethod( )方法名，XX.class);&#x2F;得到本类的所有方法<br>2.获取对象：Object o&#x3D;clazz.newInstance(0:<br>3.暴a破：m.setAccessible(true);<br>4.访问：Object returnValue&#x3D;m.invoke(o,实参列表)；&#x2F;o就是对象<br>5.注意：如果是静态方法，则invoke的参数o，可以写成null!</p>
+<hr>
+<p>总之，访问私有的，要使用爆破，setAccessible(true);</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2022/10/07/Java%E5%8F%8D%E5%B0%84%E4%B8%93%E9%A2%98%E7%AC%94%E8%AE%B0/">http://example.com/2022/10/07/Java%E5%8F%8D%E5%B0%84%E4%B8%93%E9%A2%98%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/10/07/JUC/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">JUC</div></div></a></div><div class="next-post pull-right"><a href="/2022/10/07/Nginx%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Nginx学习笔记</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java%E5%8F%8D%E5%B0%84%E4%B8%93%E9%A2%98%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">Java反射专题笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">反射能做什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E5%85%A5%E9%97%A8"><span class="toc-number">1.2.</span> <span class="toc-text">反射入门</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-number">1.3.</span> <span class="toc-text">反射的原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E7%9B%B8%E5%85%B3%E7%B1%BB"><span class="toc-number">1.4.</span> <span class="toc-text">反射相关类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Class%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.5.</span> <span class="toc-text">Class常用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96Class%E7%B1%BB%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%8D%E5%90%8C%E6%96%B9%E5%BC%8F"><span class="toc-number">1.6.</span> <span class="toc-text">获取Class类对象的不同方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%AA%E4%BA%9B%E7%B1%BB%E5%9E%8B%E6%9C%89Class%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.7.</span> <span class="toc-text">哪些类型有Class对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E5%8A%A0%E8%BD%BD%E5%92%8C%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD"><span class="toc-number">1.8.</span> <span class="toc-text">静态加载和动态加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E7%9A%84%E4%BA%94%E4%B8%AA%E5%8A%A0%E8%BD%BD%E9%98%B6%E6%AE%B5"><span class="toc-number">1.9.</span> <span class="toc-text">类的五个加载阶段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E7%B1%BB%E7%9A%84%E7%BB%93%E6%9E%84%E4%BF%A1%E6%81%AF-API"><span class="toc-number">1.10.</span> <span class="toc-text">通过反射获取类的结构信息 API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1-%E7%A0%B4%E8%A7%A3%E7%A7%81%E6%9C%89%E6%9E%84%E9%80%A0%E5%99%A8"><span class="toc-number">1.11.</span> <span class="toc-text">通过反射创建对象(破解私有构造器)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7"><span class="toc-number">1.12.</span> <span class="toc-text">通过反射获取私有属性</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/07/JUC/" title="JUC"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JUC"/></a><div class="content"><a class="title" href="/2022/10/07/JUC/" title="JUC">JUC</a><time datetime="2022-10-07T12:46:25.000Z" title="Created 2022-10-07 20:46:25">2022-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/07/Java%E5%8F%8D%E5%B0%84%E4%B8%93%E9%A2%98%E7%AC%94%E8%AE%B0/" title="Java反射专题笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java反射专题笔记"/></a><div class="content"><a class="title" href="/2022/10/07/Java%E5%8F%8D%E5%B0%84%E4%B8%93%E9%A2%98%E7%AC%94%E8%AE%B0/" title="Java反射专题笔记">Java反射专题笔记</a><time datetime="2022-10-07T12:46:25.000Z" title="Created 2022-10-07 20:46:25">2022-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/07/Nginx%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Nginx学习笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Nginx学习笔记"/></a><div class="content"><a class="title" href="/2022/10/07/Nginx%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Nginx学习笔记">Nginx学习笔记</a><time datetime="2022-10-07T12:46:25.000Z" title="Created 2022-10-07 20:46:25">2022-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/07/%E6%9C%AA%E5%91%BD%E5%90%8D/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2022/10/07/%E6%9C%AA%E5%91%BD%E5%90%8D/" title="No title">No title</a><time datetime="2022-10-07T11:22:01.893Z" title="Created 2022-10-07 19:22:01">2022-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/07/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%8A%80%E6%9C%AF%E6%A0%88/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2022/10/07/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%8A%80%E6%9C%AF%E6%A0%88/" title="No title">No title</a><time datetime="2022-10-07T11:22:01.891Z" title="Created 2022-10-07 19:22:01">2022-10-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
