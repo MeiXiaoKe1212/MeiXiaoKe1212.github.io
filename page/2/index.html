@@ -1,300 +1,1281 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://example.com/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/page/2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
-  copy: {
-    success: 'Copy successfully',
-    error: 'Copy error',
-    noSupport: 'The browser does not support'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  date_suffix: {
-    just: 'Just',
-    min: 'minutes ago',
-    hour: 'hours ago',
-    day: 'days ago',
-    month: 'months ago'
-  },
-  copyright: undefined,
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
-    }
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'Hexo',
-  isPost: false,
-  isHome: true,
-  isHighlightShrink: false,
-  isToc: false,
-  postUpdate: '2022-10-07 19:27:51'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
 
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
 
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
+<link rel="canonical" href="http://example.com/page/2/">
 
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
 
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"page/2/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Hexo</title>
   
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
-  
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Hexo</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
         
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
     
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Hexo</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022/10/07/System.getProperty(%20)%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/07/System.getProperty(%20)%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-10-07T11:22:01.883Z" title="Created 2022-10-07 19:22:01">2022-10-07</time></span></div><div class="content">System.getProperty( )基本使用“java版本号：”  + System.getProperty( “java.version” );“Java提供商名称：”  + System.getProperty( “java.vendor” );“Java提供商网站：”  + System.getProperty( “java.vendor.url” );“jre目录：”  + System.getProperty( “java.home” );“Java虚拟机规范版本号：”  + System.getProperty( “java.vm.specification.version” );“Java虚拟机规范提供商：”  + System.getProperty( “java.vm.specification.vendor” );“Java虚拟机规范名称：”  + System.getProperty( “java.vm.specification.name” );“Java虚拟机版本号：”  + System.getProperty( “java.vm.version” ) ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/10/07/Spring%E6%B3%A8%E8%A7%A3%E7%BC%96%E7%A8%8B%E4%B9%8B%20@Autowired%E6%B3%A8%E8%A7%A3/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/07/Spring%E6%B3%A8%E8%A7%A3%E7%BC%96%E7%A8%8B%E4%B9%8B%20@Autowired%E6%B3%A8%E8%A7%A3/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-10-07T11:22:01.881Z" title="Created 2022-10-07 19:22:01">2022-10-07</time></span></div><div class="content">Spring注解编程之 @Autowired注解
-@Autowired工作流程
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/07/Spring%E6%B3%A8%E8%A7%A3%E7%BC%96%E7%A8%8B%E4%B9%8B%20@Autowired%E6%B3%A8%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/10/07/Spring%E6%B3%A8%E8%A7%A3%E7%BC%96%E7%A8%8B%E4%B9%8B%20@Autowired%E6%B3%A8%E8%A7%A3/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-10-07 19:22:01" itemprop="dateCreated datePublished" datetime="2022-10-07T19:22:01+08:00">2022-10-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-07-21 15:05:15" itemprop="dateModified" datetime="2022-07-21T15:05:15+08:00">2022-07-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Spring注解编程之-Autowired注解"><a href="#Spring注解编程之-Autowired注解" class="headerlink" title="Spring注解编程之 @Autowired注解"></a>Spring注解编程之 @Autowired注解</h1><hr>
+<h2 id="Autowired工作流程"><a href="#Autowired工作流程" class="headerlink" title="@Autowired工作流程"></a><strong>@Autowired工作流程</strong></h2><p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202207211502949.png" alt="image-20220721150248900"></p>
+<ul>
+<li><strong>首先根据所需要的组件类型到IOC容器中查找</strong><ul>
+<li><strong>能够找到唯一的bean：直接执行装配</strong></li>
+<li><strong>如果完全找不到匹配这个类型的bean：装配失败</strong></li>
+<li><strong>和所需类型匹配的bean不止一个</strong><ul>
+<li><strong>没有@Qualifier注解：根据@Autowired标记位置成员变量的变量名作为bean的id进行匹配</strong><ul>
+<li><strong>能够找到：执行装配</strong></li>
+<li><strong>找不到：装配失败</strong></li>
+</ul>
+</li>
+<li><strong>使用@Qualifier注解：根据@Qualifier注解中指定的名称作为bean的id进行匹配</strong><ul>
+<li><strong>能够找到：执行装配</strong></li>
+<li><strong>找不到：装配失败</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>@Autowired中有属性required，默认值为true，因此在自动装配无法找到相应的bean时，会装配失败可以将属性required的值设置为true，则表示能装就装，装不上就不装，此时自动装配的属性为默认值但是实际开发时，基本上所有需要装配组件的地方都是必须装配的，用不上这个属性。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
 
-首先根据所需要的组件类型到IOC容器中查找
-能够找到唯一的bean：直接执行装配
-如果完全找不到匹配这个类型的bean：装配失败
-和所需类型匹配的bean不止一个
-没有@Qualifier注解：根据@Autowired标记位置成员变量的变量名作为bean的id进行匹配
-能够找到：执行装配
-找不到：装配失败
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
 
 
-使用@Qualifier注解：根据@Qualifier注解中指定的名称作为bean的id进行匹配
-能够找到：执行装配
-找不到：装配失败
 
 
+    
 
 
+<div class="post-block">
+  
+  
 
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/07/SpringBoot%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8%E5%B7%A5%E5%85%B7%E7%B1%BB/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
 
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
 
-@Autowired中有属性required，默认值为true，因此在自动装配无法找到相应的bean时，会装配失败可以将属性required的值设置为true，则表示能装就装，装不上就不装，此时自动装配的属性为默认值但是实际开发时，基本上所有需要装配组件的地方都是必须装配的，用不上这个属性。
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/10/07/SpringBoot%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8%E5%B7%A5%E5%85%B7%E7%B1%BB/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-10-07 19:22:01" itemprop="dateCreated datePublished" datetime="2022-10-07T19:22:01+08:00">2022-10-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-09-30 21:01:05" itemprop="dateModified" datetime="2022-09-30T21:01:05+08:00">2022-09-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="文件存储工具类"><a href="#文件存储工具类" class="headerlink" title="文件存储工具类"></a>文件存储工具类</h1><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.spms.util;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.commons.io.FilenameUtils;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.multipart.MultipartFile;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Files;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Path;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Paths;</span><br><span class="line"><span class="keyword">import</span> java.security.SecureRandom;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 文件存储工具类</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> MXK</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2022-07-18</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@update</span> 2022-09-16</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">StaticFileUtil</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">String</span> <span class="variable">rootPath</span> <span class="operator">=</span> System.getProperty(<span class="string">&quot;user.dir&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取抓图照片存放相对路径，含文件名</span></span><br><span class="line"><span class="comment">     * 文件夹不存在时，自动创建</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> String 相对路径</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">getSnapPath</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> getPath(<span class="string">&quot;snap&quot;</span>, <span class="string">&quot;jpg&quot;</span>, <span class="literal">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取车牌识别存放相对路径，不含文件名</span></span><br><span class="line"><span class="comment">     * 文件夹不存在时，自动创建</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> String 相对路径</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">getPlatePath</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> getPath(<span class="string">&quot;plate&quot;</span>, <span class="string">&quot;jpg&quot;</span>, <span class="literal">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 根据地址删除本地图片</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> path 图片相对地址</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 删除结果</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException ex</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">deleteFile</span><span class="params">(String path)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="type">Path</span> <span class="variable">absolutePath</span> <span class="operator">=</span> Paths.get(rootPath+path);</span><br><span class="line">        <span class="keyword">return</span> Files.deleteIfExists(absolutePath) ? <span class="string">&quot;删除成功&quot;</span> : <span class="string">&quot;删除失败&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 存储文件</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> file MultipartFile</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> directory String 不以斜杠开头。存放的文件夹名称或多层文件夹路径</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> String 相对路径。生产环境为“/static”开头的相对路径</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException IOException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">save</span><span class="params">(MultipartFile file,String directory)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">extension</span> <span class="operator">=</span> FilenameUtils.getExtension(file.getOriginalFilename());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//相对路径</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">path</span> <span class="operator">=</span> <span class="string">&quot;/static/&quot;</span> + directory;</span><br><span class="line">        <span class="comment">//物理路径</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">physicalPath</span> <span class="operator">=</span> rootPath + path;</span><br><span class="line">        FileUtil.createFolder(physicalPath);</span><br><span class="line">        <span class="type">String</span> <span class="variable">fileName</span> <span class="operator">=</span> generateFileName() + <span class="string">&quot;.&quot;</span> + extension;</span><br><span class="line">        path += fileName;</span><br><span class="line">        physicalPath += fileName;</span><br><span class="line"></span><br><span class="line">        file.transferTo(<span class="keyword">new</span> <span class="title class_">File</span>(physicalPath));</span><br><span class="line">        <span class="keyword">return</span> path;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取路径的公共方法</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> type             String 图片类别，文件夹名称</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> extension        String 图片后缀名</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> generateFileName boolean 是否生成文件名。否，返回文件夹相对路径；是，返回文件相对路径</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> String 生成的相对路径</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String <span class="title function_">getPath</span><span class="params">(String type, String extension, <span class="type">boolean</span> generateFileName)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">path</span> <span class="operator">=</span> String.format(<span class="string">&quot;/static/%s/%s/&quot;</span>, type, DatetimeUtil.formatDateTime(<span class="string">&quot;yyyyMMdd&quot;</span>));</span><br><span class="line">        FileUtil.createFolder(rootPath + path);</span><br><span class="line">        <span class="keyword">if</span> (generateFileName) &#123;</span><br><span class="line">            <span class="keyword">return</span> path + generateFileName() + <span class="string">&quot;.&quot;</span> + extension;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> path;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 生成随机文件名，yyyyMMddHHmmssSSS+三位随机数</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> String 文件名，不含后缀名</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String <span class="title function_">generateFileName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> DatetimeUtil.formatDateTime(<span class="string">&quot;yyyyMMddHHmmssSSS&quot;</span>) + (<span class="keyword">new</span> <span class="title class_">SecureRandom</span>().nextInt(<span class="number">900</span>) + <span class="number">100</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/10/07/SpringBoot%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8%E5%B7%A5%E5%85%B7%E7%B1%BB/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/07/SpringBoot%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8%E5%B7%A5%E5%85%B7%E7%B1%BB/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-10-07T11:22:01.879Z" title="Created 2022-10-07 19:22:01">2022-10-07</time></span></div><div class="content">文件存储工具类
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109package com.spms.util;import org.apache.commons.io.FilenameUtils;import org.springframework.stereotype.Component;import org.springframework.web.multipart.MultipartFile;import java.io.File;import java.io.IOException;import java.nio.file.Files;import java.nio.file.Path;impor ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/10/07/JVM%E4%B9%8B%E8%B7%AF/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/07/JVM%E4%B9%8B%E8%B7%AF/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-10-07T11:22:01.876Z" title="Created 2022-10-07 19:22:01">2022-10-07</time></span></div><div class="content">JVM之路</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/10/07/Jackson%E5%AD%A6%E4%B9%A0/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/07/Jackson%E5%AD%A6%E4%B9%A0/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-10-07T11:22:01.871Z" title="Created 2022-10-07 19:22:01">2022-10-07</time></span></div><div class="content">Jackson的使用
-序列化和反序列化 - CodeMei (codeke.xyz)
-Jackson 是用来序列化和反序列化 json 的 Java 的开源框架。Spring MVC 的默认 json 解析器便是 Jackson。与其他 Java 的 json 的框架 Gson 等相比， Jackson 解析大的 json 文件速度比较快；Jackson 运行时占用内存比较低，性能比较好；Jackson 有灵活的 API，可以很容易进行扩展和定制。
-ackson 的 1.x 版本的包名是 org.codehaus.jackson ，当升级到 2.x 版本时，包名变为 com.fasterxml.jackson，本文讨论的内容是基于最新的 Jackson 的 2.9.1 版本。
-Jackson 的核心模块由三部分组成。
+<hr>
+<h1 id="使用举例："><a href="#使用举例：" class="headerlink" title="使用举例："></a>使用举例：</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> JsonRes <span class="title function_">uploadSingleFile</span><span class="params">(SingleFileUploadDto data)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">// 是否上传文件</span></span><br><span class="line">        <span class="type">MultipartFile</span> <span class="variable">file</span> <span class="operator">=</span> data.getFile();</span><br><span class="line">        <span class="keyword">if</span> (file == <span class="literal">null</span> || file.isEmpty() || file.getSize() &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">ActiveException</span>(<span class="string">&quot;请上传文件！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 文件大小判断</span></span><br><span class="line">        <span class="type">long</span> <span class="variable">maxSize</span> <span class="operator">=</span> <span class="number">10</span> * <span class="number">1024</span> * <span class="number">1024</span>;</span><br><span class="line">        <span class="keyword">if</span> (file.getSize() &gt;= maxSize) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">ActiveException</span>(<span class="string">&quot;上传文件不超过10MB！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 图片存储处理</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">path</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">switch</span> (data.getType()) &#123;</span><br><span class="line">            <span class="comment">// 照片类型1</span></span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;type1&quot;</span>:</span><br><span class="line">                path = StaticFileUtil.save(data.getFile(), <span class="string">&quot;type1/&quot;</span>);</span><br><span class="line">                <span class="comment">// TODO 人脸识别，如果需要可以将上一句函数内代码移出。</span></span><br><span class="line">                <span class="comment">// TODO 识别出人脸则返回path，否则返回ActiveException(&quot;未能识别人脸信息！&quot;)</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="comment">// 照片类型2</span></span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;type2&quot;</span>:</span><br><span class="line">                path = StaticFileUtil.save(data.getFile(), <span class="string">&quot;type2/&quot;</span>);</span><br><span class="line">                <span class="comment">// TODO 人脸识别，如果需要可以将上一句函数内代码移出。</span></span><br><span class="line">                <span class="comment">// TODO 识别出人脸则返回path，否则返回ActiveException(&quot;未能识别人脸信息！&quot;)</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Map&lt;String, String&gt; result = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;(<span class="number">1</span>);</span><br><span class="line">        result.put(<span class="string">&quot;url&quot;</span>, path);</span><br><span class="line">        <span class="keyword">return</span> JsonRes.success(<span class="string">&quot;上传成功！&quot;</span>, result);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-jackson-core，核心包，提供基于”流模式”解析的相关 API，它包括 JsonPaser 和 JsonGenerator。Jackson 内部实现正是通过高性能的流模式 API 的 JsonGenerator 和 JsonParser 来生成和解析 json。 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/10/07/Jackson%E9%85%8D%E7%BD%AE%E5%A4%A7%E5%85%A8/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/07/Jackson%E9%85%8D%E7%BD%AE%E5%A4%A7%E5%85%A8/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-10-07T11:22:01.869Z" title="Created 2022-10-07 19:22:01">2022-10-07</time></span></div><div class="content">Jackson配置大全
-jackson支持以下格式
-Avro, BSON, CBOR, CSV, Smile, (Java) Properties, Protobuf, TOML, XML or YAML;
-基础注解
 
+      
+    </div>
 
-注解
-用法
+    
+    
+    
 
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
 
 
-@JsonProperty
-用于属性，把属性的名称序列化时转换为另外一个名称。示例：@JsonProperty(“birth_date”) private Date birthDate
 
 
-@JsonIgnore
-可用于字段、getter&#x2F;setter、构造函数参数上，作用相同，都会对相应的字段产生影响。使相应字段不参与序列化和反序列化。
-
-
-@JsonIgnoreProperties
-该注解是类注解，使得相应字段不参与序列化和反序列化。示例:@JsonIgnoreProperties({“password”,”id”}) public class Person
-
-
-@JsonFormat
-用于属性或者方法，把属性的格式序列化时转换成指定的格式。示例：@JsonFormat(timezone &#x3D; “GMT+8”, pattern  ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/10/07/Eureka/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/07/Eureka/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-10-07T11:22:01.868Z" title="Created 2022-10-07 19:22:01">2022-10-07</time></span></div><div class="content">Eureka注册中心假如我们的服务提供者user-service部署了多个实例，如图：
-
-几个问题：
-
-order-service在发起远程调用的时候，该如何得知user-service实例的ip地址和端口？
-有多个user-service实例地址，order-service调用时该如何选择？
-order-service如何得知某个user-service实例是否依然健康，是不是已经宕机？
-
-
-Eureka的结构和作用
-回答之前的各个问题。
-问题1：order-service如何得知user-service实例地址？
-获取地址信息的流程如下：
-
-user-service服务实例启动后，将自己的信息注册到eureka-server（Eureka服务端）。这个叫服务注册
-eureka-server保存服务名称到服务实例地址列表的映射关系
-order-service根据服务名称，拉取实例地址列表。这个叫服务发现或服务拉取
-
-问题2：order-service如何从多个user-service实例中选择具体的实例？
-
-order-service从实例列表中利用负载均衡算法选中一个实例地址
-向该 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022/10/07/d/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/07/d/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-10-07T11:22:01.866Z" title="Created 2022-10-07 19:22:01">2022-10-07</time></span></div><div class="content">Java web
-Servlet
-
-Filter
-
-Listener
-
-Cookie
-
-Session
-
-
-Spring 5
-IOC
-
-AOP
-
-事务
-
-
-SpringMVC
-MVC？
-请求与响应
-Restful API
-拦截器
-配置
-执行过程
-
-MyBatis…….
-MyBatis Plus…….
-Maven…….
-</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022/10/07/CentOS-7%20%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" title="No title"><img class="post_bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"></a></div><div class="recent-post-info"><a class="article-title" href="/2022/10/07/CentOS-7%20%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" title="No title">No title</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2022-10-07T11:22:01.864Z" title="Created 2022-10-07 19:22:01">2022-10-07</time></span></div><div class="content">CentOS-7 安装教程
-下载地址：
-centos-7.9.2009-isos-x86_64安装包下载_开源镜像站-阿里云 (aliyun.com)
-l 检查BIOS虚拟化支持
-
-l 新建虚拟机
-
-
-
-
-
-
-l 配置虚拟机的内存
-
-l 配置处理器， 分配的处理器内核多，虚拟机速度快
-
-l 配置网络
-
-l 正式安装Centos系统
-
-
-l 说明: 选择第一个，不需要 Test this media ，否则检测时间很长
-
-
-l 选择安装软件，默认是最小化安装.
-
-l 软件选择(套餐)，需要什么，安装好后也可以再安装。也可以根据需要勾选附加项
-， 比如这里我勾选了兼容库和基本开发工具(jdk,gcc), 安装好后，也可以卸载，更新等操作
-
-l 安装位置，进行分区操作
-
-
-
-l 先指定&#x2F;boot  分区，即引导分区，大小为1G, 然后点击添加挂载点.
-
-
-
-l 指定swap分区设备类型和文件系统
-
-
-
-
-
-
-
-l 设置网络和主机名, 安装好后也可以设置
-
-l 设置你的主机名，然后点击完成即可.
-
-l 点击开始安装就开始了
-
-
-l 注意：在实际生产环境，密码一定要复杂，否则容易造成安 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">19</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/07/JUC/" title="JUC"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JUC"/></a><div class="content"><a class="title" href="/2022/10/07/JUC/" title="JUC">JUC</a><time datetime="2022-10-07T12:46:25.000Z" title="Created 2022-10-07 20:46:25">2022-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/07/Java%E5%8F%8D%E5%B0%84%E4%B8%93%E9%A2%98%E7%AC%94%E8%AE%B0/" title="Java反射专题笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java反射专题笔记"/></a><div class="content"><a class="title" href="/2022/10/07/Java%E5%8F%8D%E5%B0%84%E4%B8%93%E9%A2%98%E7%AC%94%E8%AE%B0/" title="Java反射专题笔记">Java反射专题笔记</a><time datetime="2022-10-07T12:46:25.000Z" title="Created 2022-10-07 20:46:25">2022-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/07/Nginx%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Nginx学习笔记"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Nginx学习笔记"/></a><div class="content"><a class="title" href="/2022/10/07/Nginx%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Nginx学习笔记">Nginx学习笔记</a><time datetime="2022-10-07T12:46:25.000Z" title="Created 2022-10-07 20:46:25">2022-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/07/%E6%9C%AA%E5%91%BD%E5%90%8D/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2022/10/07/%E6%9C%AA%E5%91%BD%E5%90%8D/" title="No title">No title</a><time datetime="2022-10-07T11:22:01.893Z" title="Created 2022-10-07 19:22:01">2022-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/07/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%8A%80%E6%9C%AF%E6%A0%88/" title="No title"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="No title"/></a><div class="content"><a class="title" href="/2022/10/07/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%8A%80%E6%9C%AF%E6%A0%88/" title="No title">No title</a><time datetime="2022-10-07T11:22:01.891Z" title="Created 2022-10-07 19:22:01">2022-10-07</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">October 2022</span><span class="card-archive-list-count">19</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">19</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-10-07T11:27:51.573Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/07/JVM%E4%B9%8B%E8%B7%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/10/07/JVM%E4%B9%8B%E8%B7%AF/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-10-07 19:22:01" itemprop="dateCreated datePublished" datetime="2022-10-07T19:22:01+08:00">2022-10-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-07-06 20:30:59" itemprop="dateModified" datetime="2022-07-06T20:30:59+08:00">2022-07-06</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="JVM之路"><a href="#JVM之路" class="headerlink" title="JVM之路"></a>JVM之路</h1>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/07/Jackson%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/10/07/Jackson%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-10-07 19:22:01" itemprop="dateCreated datePublished" datetime="2022-10-07T19:22:01+08:00">2022-10-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-29 22:16:17" itemprop="dateModified" datetime="2022-06-29T22:16:17+08:00">2022-06-29</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Jackson的使用"><a href="#Jackson的使用" class="headerlink" title="Jackson的使用"></a>Jackson的使用</h1><hr>
+<p><a target="_blank" rel="noopener" href="https://www.codeke.xyz/archives/%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96">序列化和反序列化 - CodeMei (codeke.xyz)</a></p>
+<p>Jackson 是用来序列化和反序列化 json 的 Java 的开源框架。Spring MVC 的默认 json 解析器便是 Jackson。与其他 Java 的 json 的框架 Gson 等相比， Jackson 解析大的 json 文件速度比较快；Jackson 运行时占用内存比较低，性能比较好；Jackson 有灵活的 API，可以很容易进行扩展和定制。</p>
+<p>ackson 的 1.x 版本的包名是 org.codehaus.jackson ，当升级到 2.x 版本时，包名变为 com.fasterxml.jackson，本文讨论的内容是基于最新的 Jackson 的 2.9.1 版本。</p>
+<p>Jackson 的核心模块由三部分组成。</p>
+<ul>
+<li>jackson-core，核心包，提供基于”流模式”解析的相关 API，它包括 JsonPaser 和 JsonGenerator。Jackson 内部实现正是通过高性能的流模式 API 的 JsonGenerator 和 JsonParser 来生成和解析 json。</li>
+<li>jackson-annotations，注解包，提供标准注解功能；</li>
+<li>jackson-databind ，数据绑定包， 提供基于”对象绑定” 解析的相关 API （ ObjectMapper ） 和”树模型” 解析的相关 API （JsonNode）；基于”对象绑定” 解析的 API 和”树模型”解析的 API 依赖基于”流模式”解析的 API。</li>
+</ul>
+<p>在了解 Jackson 的概要情况之后，下面介绍 Jackson 的基本用法。</p>
+<h2 id="导入依赖"><a href="#导入依赖" class="headerlink" title="导入依赖"></a>导入依赖</h2><p>若想在 Java 代码中使用 Jackson 的核心模块的 jar 包 ，需要在 pom.xml 中添加如下信息。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-databind<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.13.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.datatype<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-datatype-jsr310<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.13.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>jackson-databind</code> 依赖 <code>jackson-core</code> 和 <code>jackson-annotations</code>，当添加 <code>jackson-databind</code> 之后， <code>jackson-core</code> 和 <code>jackson-annotations</code> 也随之添加到 Java 项目工程中。在添加相关依赖包之后，就可以使用 Jackson。</p>
+<p><code>jackson-datatype-jsr310</code>依赖是用来处理java的时间日期类型的，如果不加则在序列化或者反序列化时间类型的数据时会报错。</p>
+<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><p>Jackson 最常用的 API 就是基于”对象绑定” 的 ObjectMapper。下面是一个 ObjectMapper 的使用的简单示例。</p>
+<p>准备一个名称为 Person 的 Java 对象：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="comment">// 正常case</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="comment">// 空对象case</span></span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line">    <span class="comment">// 日期转换case</span></span><br><span class="line">    <span class="keyword">private</span> Date date;</span><br><span class="line">    <span class="comment">// 默认值case</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> height;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test1</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">ObjectMapper</span> <span class="variable">mapper</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line">    <span class="comment">// 造数据</span></span><br><span class="line">    <span class="type">Person</span> <span class="variable">person</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">    person.setName(<span class="string">&quot;Tom&quot;</span>);</span><br><span class="line">    person.setAge(<span class="number">40</span>);</span><br><span class="line">    person.setDate(<span class="keyword">new</span> <span class="title class_">Date</span>());</span><br><span class="line">    System.out.println(<span class="string">&quot;序列化&quot;</span>);</span><br><span class="line">    <span class="type">String</span> <span class="variable">jsonString</span> <span class="operator">=</span> mapper.writerWithDefaultPrettyPrinter().writeValueAsString(person);</span><br><span class="line">    System.out.println(jsonString);</span><br><span class="line">    System.out.println(<span class="string">&quot;反序列化&quot;</span>);</span><br><span class="line">    <span class="type">Person</span> <span class="variable">deserializedPerson</span> <span class="operator">=</span> mapper.readValue(jsonString, Person.class);</span><br><span class="line">    System.out.println(deserializedPerson);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>这里调用了writerWithDefaultPrettyPrinter()和writeValueAsString()，前一个是为了美化输出，后一个才是真正用来序列化person对象的方法。</strong></p>
+<p>打印输出：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">序列化</span><br><span class="line">&#123;</span><br><span class="line"><span class="string">&quot;name&quot;</span> : <span class="string">&quot;Tom&quot;</span>,</span><br><span class="line"><span class="string">&quot;age&quot;</span> : <span class="number">40</span>,</span><br><span class="line"><span class="string">&quot;date&quot;</span> : <span class="number">1594634846647</span>,</span><br><span class="line"><span class="string">&quot;man&quot;</span> : <span class="literal">null</span>,</span><br><span class="line"><span class="string">&quot;height&quot;</span> : <span class="number">0</span></span><br><span class="line">&#125;</span><br><span class="line">反序列化</span><br><span class="line">JackSonTest.Person(name=Tom, age=<span class="number">40</span>, date=Mon Jul <span class="number">13</span> <span class="number">18</span>:<span class="number">07</span>:<span class="number">26</span> CST <span class="number">2020</span>, man=<span class="literal">null</span>, height=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<p>ObjectMapper 通过 writeValue 系列方法将 java 对象序列化为 json，并将 json 存储成不同的格式，String（writeValueAsString），Byte Array（writeValueAsString），Writer， File，OutStream 和 DataOutput。</p>
+<p>ObjectMapper 通过 readValue 系列方法从不同的数据源像 String ， Byte Array， Reader，File，URL， InputStream 将 json反序列化为 java 对象。</p>
+<hr>
+<h2 id="统一配置"><a href="#统一配置" class="headerlink" title="统一配置"></a>统一配置</h2><p>在调用 writeValue 或调用 readValue 方法之前，往往需要设置 ObjectMapper 的相关配置信息。这些配置信息应用 java 对象的所有属性上。示例如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在反序列化时忽略在 json 中存在但 Java 对象不存在的属性</span></span><br><span class="line"><span class="comment">//例如：在json中传来一个 &quot;age&quot;: 80 的属性信息，而在Java对象中不存在age这个属性，那么就要添加如下的配置：</span></span><br><span class="line">mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, <span class="literal">false</span>);</span><br><span class="line"><span class="comment">//在序列化时日期格式默认为 yyyy-MM-dd&#x27;T&#x27;HH:mm:ss.SSSZ</span></span><br><span class="line">mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, <span class="literal">false</span>);</span><br><span class="line"><span class="comment">//在序列化时自定义时间日期格式</span></span><br><span class="line">mapper.setDateFormat(<span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>));</span><br><span class="line"><span class="comment">//在序列化时忽略值为 null 的属性</span></span><br><span class="line">mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);</span><br><span class="line"><span class="comment">//在序列化时忽略值为默认值的属性</span></span><br><span class="line">mapper.setDefaultPropertyInclusion(JsonInclude.Include.NON_DEFAULT);</span><br></pre></td></tr></table></figure>
+
+<p>可以写成工具类，将所有需要配置的信息放在静态代码块中：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ObjectMapperUtil</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">ObjectMapper</span> <span class="variable">mapper</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="comment">//在反序列化时忽略在 json 中存在但 Java 对象不存在的属性</span></span><br><span class="line">        <span class="comment">//例如：在json中传来一个 &quot;age&quot;: 80 的属性信息，而在Java对象中不存在age这个属性，那么就要添加如下的配置：</span></span><br><span class="line">        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, <span class="literal">false</span>);</span><br><span class="line">        <span class="comment">//在序列化时日期格式默认为 yyyy-MM-dd&#x27;T&#x27;HH:mm:ss.SSSZ</span></span><br><span class="line">        mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, <span class="literal">false</span>);</span><br><span class="line">        <span class="comment">//在序列化时自定义时间日期格式</span></span><br><span class="line">        mapper.setDateFormat(<span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>));</span><br><span class="line">        <span class="comment">//在序列化时忽略值为 null 的属性</span></span><br><span class="line">        mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);</span><br><span class="line">        <span class="comment">//在序列化时忽略值为默认值的属性</span></span><br><span class="line">        mapper.setDefaultPropertyInclusion(JsonInclude.Include.NON_DEFAULT);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> ObjectMapper <span class="title function_">getMapper</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> mapper;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>更多配置信息可以查看 Jackson 的 DeserializationFeature，SerializationFeature 和 Include。</p>
+<p><a target="_blank" rel="noopener" href="https://www.codeke.xyz/archives/jackson%E9%85%8D%E7%BD%AE%E6%B3%A8%E8%A7%A3%E5%A4%A7%E5%85%A8">Jackson配置 注解大全 - CodeMei (codeke.xyz)</a></p>
+<h2 id="使用注解"><a href="#使用注解" class="headerlink" title="使用注解"></a>使用注解</h2><p>Jackson 根据它的默认方式序列化和反序列化 java 对象，若根据实际需要，灵活的调整它的默认方式，可以使用 Jackson 的注解。常用的注解及用法如下。</p>
+<table>
+<thead>
+<tr>
+<th align="left">注解</th>
+<th align="left">用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">@JsonProperty</td>
+<td align="left">用于属性，把属性的名称序列化时转换为另外一个名称。示例：@JsonProperty(“birth_date”) private Date birthDate</td>
+</tr>
+<tr>
+<td align="left">@JsonIgnore</td>
+<td align="left">可用于字段、getter&#x2F;setter、构造函数参数上，作用相同，都会对相应的字段产生影响。使相应字段不参与序列化和反序列化。</td>
+</tr>
+<tr>
+<td align="left">@JsonIgnoreProperties</td>
+<td align="left">该注解是类注解。该注解在Java类和JSON不完全匹配的时候使用。</td>
+</tr>
+<tr>
+<td align="left">@JsonFormat</td>
+<td align="left">用于属性或者方法，把属性的格式序列化时转换成指定的格式。示例：@JsonFormat(timezone &#x3D; “GMT+8”, pattern &#x3D; “yyyy-MM-dd HH:mm”) public Date getBirthDate()</td>
+</tr>
+<tr>
+<td align="left">@JsonPropertyOrder</td>
+<td align="left">用于类， 和 @JsonProperty 的index属性类似，指定属性在序列化时 json 中的顺序 ， 示例：@JsonPropertyOrder({ “birth_Date”, “name” }) public class Person</td>
+</tr>
+<tr>
+<td align="left">@JsonCreator</td>
+<td align="left">用于构造方法，和 @JsonProperty 配合使用，适用有参数的构造方法。示例：@JsonCreator public Person(@JsonProperty(“name”)String name) {…}</td>
+</tr>
+<tr>
+<td align="left">@JsonAnySetter</td>
+<td align="left">用于属性或者方法，设置未反序列化的属性名和值作为键值存储到 map 中 @JsonAnySetter public void set(String key, Object value) { map.put(key, value); }</td>
+</tr>
+<tr>
+<td align="left">@JsonAnyGetter</td>
+<td align="left">用于方法 ，获取所有未序列化的属性 public Map&lt;String, Object&gt; any() { return map; }</td>
+</tr>
+<tr>
+<td align="left">@JsonNaming</td>
+<td align="left">类注解。序列化的时候该注解可将驼峰命名的字段名转换为下划线分隔的小写字母命名方式。反序列化的时候可以将下划线分隔的小写字母转换为驼峰命名的字段名。示例：@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)</td>
+</tr>
+<tr>
+<td align="left">@JsonRootName</td>
+<td align="left">类注解。需开启mapper.enable(SerializationFeature.WRAP_ROOT_VALUE)，用于序列化时输出带有根属性名称的 JSON 串，形式如 {“root_name”:{“id”:1,”name”:”zhangsan”}}。但不支持该 JSON 串反序列化。</td>
+</tr>
+</tbody></table>
+<p>使用示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用于类,指定属性在序列化时 json 中的顺序</span></span><br><span class="line"><span class="meta">@JsonPropertyOrder(&#123;&quot;date&quot;, &quot;user_name&quot;&#125;)</span></span><br><span class="line"><span class="comment">// 批量忽略属性，不进行序列化</span></span><br><span class="line"><span class="meta">@JsonIgnoreProperties(value = &#123;&quot;other&quot;&#125;)</span></span><br><span class="line"><span class="comment">// 用于序列化与反序列化时的驼峰命名与小写字母命名转换</span></span><br><span class="line"><span class="meta">@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123;</span><br><span class="line">    <span class="meta">@JsonIgnore</span></span><br><span class="line">    <span class="keyword">private</span> Map&lt;String, Object&gt; other = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 正常case</span></span><br><span class="line">    <span class="meta">@JsonProperty(&quot;user_name&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String userName;</span><br><span class="line">    <span class="comment">// 空对象case</span></span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line">    <span class="meta">@JsonFormat(timezone = &quot;GMT+8&quot;, pattern = &quot;yyyy-MM-dd HH:mm:ss&quot;)</span></span><br><span class="line">    <span class="comment">// 日期转换case</span></span><br><span class="line">    <span class="keyword">private</span> Date date;</span><br><span class="line">    <span class="comment">// 默认值case</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> height;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">User</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 反序列化执行构造方法</span></span><br><span class="line">    <span class="meta">@JsonCreator</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">User</span><span class="params">(<span class="meta">@JsonProperty(&quot;user_name&quot;)</span> String userName)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;@JsonCreator 注解使得反序列化自动执行该构造方法 &quot;</span> + userName);</span><br><span class="line">        <span class="comment">// 反序列化需要手动赋值</span></span><br><span class="line">        <span class="built_in">this</span>.userName = userName;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@JsonAnySetter</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">set</span><span class="params">(String key, Object value)</span> &#123;</span><br><span class="line">        other.put(key, value);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@JsonAnyGetter</span></span><br><span class="line">    <span class="keyword">public</span> Map&lt;String, Object&gt; <span class="title function_">any</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> other;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 本文默认省略getter、setter方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>单元测试：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test3</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">ObjectMapper</span> <span class="variable">mapper</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line">    <span class="comment">// 造数据</span></span><br><span class="line">    Map&lt;String, Object&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    map.put(<span class="string">&quot;user_name&quot;</span>, <span class="string">&quot;Tom&quot;</span>);</span><br><span class="line">    map.put(<span class="string">&quot;date&quot;</span>, <span class="string">&quot;2020-07-26 19:28:44&quot;</span>);</span><br><span class="line">    map.put(<span class="string">&quot;age&quot;</span>, <span class="number">100</span>);</span><br><span class="line">    map.put(<span class="string">&quot;demoKey&quot;</span>, <span class="string">&quot;demoValue&quot;</span>);</span><br><span class="line">    <span class="type">String</span> <span class="variable">jsonString</span> <span class="operator">=</span> mapper.writerWithDefaultPrettyPrinter().writeValueAsString(map);</span><br><span class="line">    System.out.println(jsonString);</span><br><span class="line">    System.out.println(<span class="string">&quot;反序列化&quot;</span>);</span><br><span class="line">    <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> mapper.readValue(jsonString, User.class);</span><br><span class="line">    System.out.println(user);</span><br><span class="line">    System.out.println(<span class="string">&quot;序列化&quot;</span>);</span><br><span class="line">    jsonString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(user);</span><br><span class="line">    System.out.println(jsonString);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>打印输出：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;date&quot;</span> : <span class="string">&quot;2020-07-26 19:28:44&quot;</span>,</span><br><span class="line">  <span class="string">&quot;demoKey&quot;</span> : <span class="string">&quot;demoValue&quot;</span>,</span><br><span class="line">  <span class="string">&quot;user_name&quot;</span> : <span class="string">&quot;Tom&quot;</span>,</span><br><span class="line">  <span class="string">&quot;age&quot;</span> : <span class="number">100</span></span><br><span class="line">&#125;</span><br><span class="line">反序列化</span><br><span class="line"><span class="meta">@JsonCreator</span> 注解使得反序列化自动执行该构造方法Tom</span><br><span class="line">JackSonTest.User(other=&#123;demoKey=demoValue&#125;, userName=Tom, age=<span class="number">100</span>, date=Sun Jul <span class="number">26</span> <span class="number">19</span>:<span class="number">28</span>:<span class="number">44</span> CST <span class="number">2020</span>, height=<span class="number">0</span>)</span><br><span class="line">序列化</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;date&quot;</span> : <span class="string">&quot;2020-07-26 19:28:44&quot;</span>,</span><br><span class="line">  <span class="string">&quot;user_name&quot;</span> : <span class="string">&quot;Tom&quot;</span>,</span><br><span class="line">  <span class="string">&quot;age&quot;</span> : <span class="number">100</span>,</span><br><span class="line">  <span class="string">&quot;height&quot;</span> : <span class="number">0</span>,</span><br><span class="line">  <span class="string">&quot;demoKey&quot;</span> : <span class="string">&quot;demoValue&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="日期处理"><a href="#日期处理" class="headerlink" title="日期处理"></a>日期处理</h2><p>不同类型的日期类型，JackSon 的处理方式也不同。</p>
+<h3 id="普通日期"><a href="#普通日期" class="headerlink" title="普通日期"></a>普通日期</h3><p>对于日期类型为 <code>java.util.Calendar</code>, <code>java.util.GregorianCalendar</code>, <code>java.sql.Date</code>, <code>java.util.Date</code>, <code>java.sql.Timestamp</code>，若不指定格式，在 json 文件中将序列化为 <code>long</code> 类型的数据。显然这种默认格式，可读性差，转换格式是必要的。</p>
+<p>JackSon 有很多方式转换日期格式。</p>
+<ul>
+<li>注解方式，使用 <code>@JsonFormat</code> 注解指定日期格式。</li>
+<li>ObjectMapper 方式，调用 ObjectMapper 的方法 <code>setDateFormat</code>，将序列化为指定格式的 string 类型的数据。</li>
+</ul>
+<h3 id="Local日期"><a href="#Local日期" class="headerlink" title="Local日期"></a>Local日期</h3><p>对于日期类型为 java.time.LocalDate, java.time.LocalDateTime，还需要添加代码 <code>mapper.registerModule(new JavaTimeModule())</code>，同时添加相应的依赖 jar 包。</p>
+<p>使用示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">Student</span> &#123;</span><br><span class="line">    <span class="comment">// 正常case</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="comment">// 日期转换case</span></span><br><span class="line">    <span class="keyword">private</span> LocalDateTime date;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test4</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">ObjectMapper</span> <span class="variable">mapper</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line">    <span class="comment">// 必须添加对LocalDate的支持</span></span><br><span class="line">    mapper.registerModule(JavaTimeModule());</span><br><span class="line">    <span class="comment">// 造数据</span></span><br><span class="line">    <span class="type">Student</span> <span class="variable">student</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Student</span>();</span><br><span class="line">    student.setName(<span class="string">&quot;Tom&quot;</span>);</span><br><span class="line">    student.setDate(LocalDateTime.now());</span><br><span class="line">    System.out.println(<span class="string">&quot;序列化&quot;</span>);</span><br><span class="line">    <span class="type">String</span> <span class="variable">jsonString</span> <span class="operator">=</span> mapper.writerWithDefaultPrettyPrinter().writeValueAsString(student);</span><br><span class="line">    System.out.println(jsonString);</span><br><span class="line">    System.out.println(<span class="string">&quot;反序列化&quot;</span>);</span><br><span class="line">    <span class="type">Student</span> <span class="variable">deserializedPerson</span> <span class="operator">=</span> mapper.readValue(jsonString, Student.class);</span><br><span class="line">    System.out.println(deserializedPerson);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">private</span> Module <span class="title function_">JavaTimeModule</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">JavaTimeModule</span> <span class="variable">module</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JavaTimeModule</span>();</span><br><span class="line">    <span class="type">String</span> <span class="variable">DATE_TIME_FORMAT</span> <span class="operator">=</span> <span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>;</span><br><span class="line">    <span class="type">String</span> <span class="variable">DATE_FORMAT</span> <span class="operator">=</span> <span class="string">&quot;yyyy-MM-dd&quot;</span>;</span><br><span class="line">    <span class="type">String</span> <span class="variable">TIME_FORMAT</span> <span class="operator">=</span> <span class="string">&quot;HH:mm:ss&quot;</span>;</span><br><span class="line">    <span class="keyword">module</span>.addSerializer(LocalDateTime.class, <span class="keyword">new</span> <span class="title class_">LocalDateTimeSerializer</span>(DateTimeFormatter.ofPattern(DATE_TIME_FORMAT)));</span><br><span class="line">    <span class="keyword">module</span>.addSerializer(LocalDate.class, <span class="keyword">new</span> <span class="title class_">LocalDateSerializer</span>(DateTimeFormatter.ofPattern(DATE_FORMAT)));</span><br><span class="line">    <span class="keyword">module</span>.addSerializer(LocalTime.class, <span class="keyword">new</span> <span class="title class_">LocalTimeSerializer</span>(DateTimeFormatter.ofPattern((TIME_FORMAT))));</span><br><span class="line">    <span class="keyword">module</span>.addDeserializer(LocalDateTime.class, <span class="keyword">new</span> <span class="title class_">LocalDateTimeDeserializer</span>(DateTimeFormatter.ofPattern(DATE_TIME_FORMAT)));</span><br><span class="line">    <span class="keyword">module</span>.addDeserializer(LocalDate.class, <span class="keyword">new</span> <span class="title class_">LocalDateDeserializer</span>(DateTimeFormatter.ofPattern(DATE_FORMAT)));</span><br><span class="line">    <span class="keyword">module</span>.addDeserializer(LocalTime.class, <span class="keyword">new</span> <span class="title class_">LocalTimeDeserializer</span>(DateTimeFormatter.ofPattern(TIME_FORMAT)));</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">module</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>打印输出：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">序列化</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span> : <span class="string">&quot;Tom&quot;</span>,</span><br><span class="line">  <span class="string">&quot;date&quot;</span> : <span class="string">&quot;2020-07-26 23:10:42&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">反序列化</span><br><span class="line">JackSonTest.Student(name=Tom, date=<span class="number">2020</span>-<span class="number">07</span>-26T23:<span class="number">10</span>:<span class="number">42</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Joda日期"><a href="#Joda日期" class="headerlink" title="Joda日期"></a>Joda日期</h3><p>对于日期类型为 <code>org.joda.time.DateTime</code>，还需要添加代码 <code>mapper.registerModule(new JodaModule())</code>，同时添加相应的依赖 jar 包</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.datatype<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-datatype-joda<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="对象集合"><a href="#对象集合" class="headerlink" title="对象集合"></a>对象集合</h2><p>Jackson 对泛型反序列化也提供很好的支持。</p>
+<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>对于 List 类型 ，可以调用 <code>constructCollectionType</code> 方法来序列化，也可以构造 <code>TypeReference</code> 来序列化。</p>
+<p>使用示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test5</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">ObjectMapper</span> <span class="variable">mapper</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line">    <span class="type">CollectionType</span> <span class="variable">javaType</span> <span class="operator">=</span> mapper.getTypeFactory().constructCollectionType(List.class, Person.class);</span><br><span class="line">    <span class="comment">// 造数据</span></span><br><span class="line">    List&lt;Person&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        <span class="type">Person</span> <span class="variable">person</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">        person.setName(<span class="string">&quot;Tom&quot;</span>);</span><br><span class="line">        person.setAge(<span class="keyword">new</span> <span class="title class_">Random</span>().nextInt(<span class="number">100</span>));</span><br><span class="line">        person.setDate(<span class="keyword">new</span> <span class="title class_">Date</span>());</span><br><span class="line">        list.add(person);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">&quot;序列化&quot;</span>);</span><br><span class="line">    <span class="type">String</span> <span class="variable">jsonInString</span> <span class="operator">=</span> mapper.writerWithDefaultPrettyPrinter().writeValueAsString(list);</span><br><span class="line">    System.out.println(jsonInString);</span><br><span class="line">    System.out.println(<span class="string">&quot;反序列化：使用 javaType&quot;</span>);</span><br><span class="line">    List&lt;Person&gt; personList = mapper.readValue(jsonInString, javaType);</span><br><span class="line">    System.out.println(personList);</span><br><span class="line">    System.out.println(<span class="string">&quot;反序列化：使用 TypeReference&quot;</span>);</span><br><span class="line">    List&lt;Person&gt; personList2 = mapper.readValue(jsonInString, <span class="keyword">new</span> <span class="title class_">TypeReference</span>&lt;List&lt;Person&gt;&gt;() &#123;</span><br><span class="line">    &#125;);</span><br><span class="line">    System.out.println(personList2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>打印输出：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">序列化</span><br><span class="line">[ &#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span> : <span class="string">&quot;Tom&quot;</span>,</span><br><span class="line">  <span class="string">&quot;age&quot;</span> : <span class="number">33</span>,</span><br><span class="line">  <span class="string">&quot;date&quot;</span> : <span class="number">1595778639371</span>,</span><br><span class="line">  <span class="string">&quot;height&quot;</span> : <span class="number">0</span></span><br><span class="line">&#125;, &#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span> : <span class="string">&quot;Tom&quot;</span>,</span><br><span class="line">  <span class="string">&quot;age&quot;</span> : <span class="number">3</span>,</span><br><span class="line">  <span class="string">&quot;date&quot;</span> : <span class="number">1595778639371</span>,</span><br><span class="line">  <span class="string">&quot;height&quot;</span> : <span class="number">0</span></span><br><span class="line">&#125;, &#123;</span><br><span class="line">  <span class="string">&quot;name&quot;</span> : <span class="string">&quot;Tom&quot;</span>,</span><br><span class="line">  <span class="string">&quot;age&quot;</span> : <span class="number">36</span>,</span><br><span class="line">  <span class="string">&quot;date&quot;</span> : <span class="number">1595778639371</span>,</span><br><span class="line">  <span class="string">&quot;height&quot;</span> : <span class="number">0</span></span><br><span class="line">&#125; ]</span><br><span class="line">反序列化：使用 javaType</span><br><span class="line">[JackSonTest.Person(name=Tom, age=<span class="number">33</span>, date=Sun Jul <span class="number">26</span> <span class="number">23</span>:<span class="number">50</span>:<span class="number">39</span> CST <span class="number">2020</span>, height=<span class="number">0</span>), JackSonTest.Person(name=Tom, age=<span class="number">3</span>, date=Sun Jul <span class="number">26</span> <span class="number">23</span>:<span class="number">50</span>:<span class="number">39</span> CST <span class="number">2020</span>, height=<span class="number">0</span>), JackSonTest.Person(name=Tom, age=<span class="number">36</span>, date=Sun Jul <span class="number">26</span> <span class="number">23</span>:<span class="number">50</span>:<span class="number">39</span> CST <span class="number">2020</span>, height=<span class="number">0</span>)]</span><br><span class="line">反序列化：使用 TypeReference</span><br><span class="line">[JackSonTest.Person(name=Tom, age=<span class="number">33</span>, date=Sun Jul <span class="number">26</span> <span class="number">23</span>:<span class="number">50</span>:<span class="number">39</span> CST <span class="number">2020</span>, height=<span class="number">0</span>), JackSonTest.Person(name=Tom, age=<span class="number">3</span>, date=Sun Jul <span class="number">26</span> <span class="number">23</span>:<span class="number">50</span>:<span class="number">39</span> CST <span class="number">2020</span>, height=<span class="number">0</span>), JackSonTest.Person(name=Tom, age=<span class="number">36</span>, date=Sun Jul <span class="number">26</span> <span class="number">23</span>:<span class="number">50</span>:<span class="number">39</span> CST <span class="number">2020</span>, height=<span class="number">0</span>)]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><p>对于 map 类型， 与 List 的实现方式相似。</p>
+<p>使用示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test6</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">ObjectMapper</span> <span class="variable">mapper</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line">    <span class="comment">//第二参数是 map 的 key 的类型，第三参数是 map 的 value 的类型</span></span><br><span class="line">    <span class="type">MapType</span> <span class="variable">javaType</span> <span class="operator">=</span> mapper.getTypeFactory().constructMapType(HashMap.class, String.class, Person.class);</span><br><span class="line">    <span class="comment">// 造数据</span></span><br><span class="line">    Map&lt;String, Person&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        <span class="type">Person</span> <span class="variable">person</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">        person.setName(<span class="string">&quot;Tom&quot;</span>);</span><br><span class="line">        person.setAge(<span class="keyword">new</span> <span class="title class_">Random</span>().nextInt(<span class="number">100</span>));</span><br><span class="line">        person.setDate(<span class="keyword">new</span> <span class="title class_">Date</span>());</span><br><span class="line">        map.put(<span class="string">&quot;key&quot;</span> + i, person);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">&quot;序列化&quot;</span>);</span><br><span class="line">    <span class="type">String</span> <span class="variable">jsonInString</span> <span class="operator">=</span> mapper.writerWithDefaultPrettyPrinter().writeValueAsString(map);</span><br><span class="line">    System.out.println(jsonInString);</span><br><span class="line">    System.out.println(<span class="string">&quot;反序列化: 使用 javaType&quot;</span>);</span><br><span class="line">    Map&lt;String, Person&gt; personMap = mapper.readValue(jsonInString, javaType);</span><br><span class="line">    System.out.println(personMap);</span><br><span class="line">    System.out.println(<span class="string">&quot;反序列化: 使用 TypeReference&quot;</span>);</span><br><span class="line">    Map&lt;String, Person&gt; personMap2 = mapper.readValue(jsonInString, <span class="keyword">new</span> <span class="title class_">TypeReference</span>&lt;Map&lt;String, Person&gt;&gt;() &#123;</span><br><span class="line">    &#125;);</span><br><span class="line">    System.out.println(personMap2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>打印输出：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">序列化</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;key1&quot;</span> : &#123;</span><br><span class="line">    <span class="string">&quot;name&quot;</span> : <span class="string">&quot;Tom&quot;</span>,</span><br><span class="line">    <span class="string">&quot;age&quot;</span> : <span class="number">95</span>,</span><br><span class="line">    <span class="string">&quot;date&quot;</span> : <span class="number">1595778740606</span>,</span><br><span class="line">    <span class="string">&quot;height&quot;</span> : <span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;key2&quot;</span> : &#123;</span><br><span class="line">    <span class="string">&quot;name&quot;</span> : <span class="string">&quot;Tom&quot;</span>,</span><br><span class="line">    <span class="string">&quot;age&quot;</span> : <span class="number">27</span>,</span><br><span class="line">    <span class="string">&quot;date&quot;</span> : <span class="number">1595778740606</span>,</span><br><span class="line">    <span class="string">&quot;height&quot;</span> : <span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;key0&quot;</span> : &#123;</span><br><span class="line">    <span class="string">&quot;name&quot;</span> : <span class="string">&quot;Tom&quot;</span>,</span><br><span class="line">    <span class="string">&quot;age&quot;</span> : <span class="number">98</span>,</span><br><span class="line">    <span class="string">&quot;date&quot;</span> : <span class="number">1595778740606</span>,</span><br><span class="line">    <span class="string">&quot;height&quot;</span> : <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">反序列化: 使用 javaType</span><br><span class="line">&#123;key1=JackSonTest.Person(name=Tom, age=<span class="number">95</span>, date=Sun Jul <span class="number">26</span> <span class="number">23</span>:<span class="number">52</span>:<span class="number">20</span> CST <span class="number">2020</span>, height=<span class="number">0</span>), key2=JackSonTest.Person(name=Tom, age=<span class="number">27</span>, date=Sun Jul <span class="number">26</span> <span class="number">23</span>:<span class="number">52</span>:<span class="number">20</span> CST <span class="number">2020</span>, height=<span class="number">0</span>), key0=JackSonTest.Person(name=Tom, age=<span class="number">98</span>, date=Sun Jul <span class="number">26</span> <span class="number">23</span>:<span class="number">52</span>:<span class="number">20</span> CST <span class="number">2020</span>, height=<span class="number">0</span>)&#125;</span><br><span class="line">反序列化: 使用 TypeReference</span><br><span class="line">&#123;key1=JackSonTest.Person(name=Tom, age=<span class="number">95</span>, date=Sun Jul <span class="number">26</span> <span class="number">23</span>:<span class="number">52</span>:<span class="number">20</span> CST <span class="number">2020</span>, height=<span class="number">0</span>), key2=JackSonTest.Person(name=Tom, age=<span class="number">27</span>, date=Sun Jul <span class="number">26</span> <span class="number">23</span>:<span class="number">52</span>:<span class="number">20</span> CST <span class="number">2020</span>, height=<span class="number">0</span>), key0=JackSonTest.Person(name=Tom, age=<span class="number">98</span>, date=Sun Jul <span class="number">26</span> <span class="number">23</span>:<span class="number">52</span>:<span class="number">20</span> CST <span class="number">2020</span>, height=<span class="number">0</span>)&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Array 和 Collection 的处理与 List，Map 相似，这里不再详述。</p>
+<h2 id="属性可视化"><a href="#属性可视化" class="headerlink" title="属性可视化"></a>属性可视化</h2><p>JackSon 默认不是所有的属性都可以被序列化和反序列化。默认的属性可视化的规则如下：</p>
+<ul>
+<li>若该属性修饰符是 public，该属性可序列化和反序列化。</li>
+<li>若属性的修饰符不是 public，但是它的 getter 方法和 setter 方法是 public，该属性可序列化和反序列化。因为 getter 方法用于序列化， 而 setter 方法用于反序列化。</li>
+<li>若属性只有 public 的 setter 方法，而无 public 的 getter 方 法，该属性只能用于反序列化。</li>
+</ul>
+<p>若想更改默认的属性可视化的规则，需要调用 ObjectMapper 的方法 <code>setVisibility</code>。</p>
+<p>下面的示例使修饰符为 protected 的属性 name 也可以序列化和反序列化。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">People</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> age;</span><br><span class="line">    <span class="keyword">protected</span> String name;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test7</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">ObjectMapper</span> <span class="variable">mapper</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line">    <span class="comment">// PropertyAccessor 支持的类型有 ALL,CREATOR,FIELD,GETTER,IS_GETTER,NONE,SETTER</span></span><br><span class="line">    <span class="comment">// Visibility 支持的类型有 ANY,DEFAULT,NON_PRIVATE,NONE,PROTECTED_AND_PUBLIC,PUBLIC_ONLY</span></span><br><span class="line">    mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);</span><br><span class="line">    <span class="comment">// 造数据</span></span><br><span class="line">    <span class="type">People</span> <span class="variable">people</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">People</span>();</span><br><span class="line">    people.name = <span class="string">&quot;Tom&quot;</span>;</span><br><span class="line">    people.age = <span class="number">40</span>;</span><br><span class="line">    System.out.println(<span class="string">&quot;序列化&quot;</span>);</span><br><span class="line">    <span class="type">String</span> <span class="variable">jsonString</span> <span class="operator">=</span> mapper.writerWithDefaultPrettyPrinter().writeValueAsString(people);</span><br><span class="line">    System.out.println(jsonString);</span><br><span class="line">    System.out.println(<span class="string">&quot;反序列化&quot;</span>);</span><br><span class="line">    <span class="type">People</span> <span class="variable">deserializedPerson</span> <span class="operator">=</span> mapper.readValue(jsonString, People.class);</span><br><span class="line">    System.out.println(deserializedPerson);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>打印输出：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">序列化</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;age&quot;</span> : <span class="number">40</span>,</span><br><span class="line">  <span class="string">&quot;name&quot;</span> : <span class="string">&quot;Tom&quot;</span></span><br><span class="line">&#125;</span><br><span class="line">反序列化</span><br><span class="line">JackSonTest.People(age=<span class="number">40</span>, name=Tom)</span><br></pre></td></tr></table></figure>
+
+<h2 id="属性过滤"><a href="#属性过滤" class="headerlink" title="属性过滤"></a>属性过滤</h2><p>在将 Java 对象序列化为 json 时 ，有些属性需要过滤掉，不显示在 json 中 ，除了使用 <code>@JsonIgnore</code> 过滤单个属性或用 <code>@JsonIgnoreProperties</code> 过滤多个属性之外， Jackson 还有通过代码控制的方式。</p>
+<p>使用示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@JsonFilter(&quot;myFilter&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">MyFilter</span> &#123;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test8</span><span class="params">()</span> <span class="keyword">throws</span> JsonProcessingException &#123;</span><br><span class="line">    <span class="type">ObjectMapper</span> <span class="variable">mapper</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line">    <span class="comment">//设置 addMixIn</span></span><br><span class="line">    mapper.addMixIn(Person.class, MyFilter.class);</span><br><span class="line">    <span class="comment">//调用 SimpleBeanPropertyFilter 的 serializeAllExcept 方法</span></span><br><span class="line">    <span class="type">SimpleBeanPropertyFilter</span> <span class="variable">newFilter</span> <span class="operator">=</span> SimpleBeanPropertyFilter.serializeAllExcept(<span class="string">&quot;age&quot;</span>);</span><br><span class="line">    <span class="comment">//或重写 SimpleBeanPropertyFilter 的 serializeAsField 方法</span></span><br><span class="line">    <span class="type">SimpleBeanPropertyFilter</span> <span class="variable">newFilter2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleBeanPropertyFilter</span>() &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">serializeAsField</span><span class="params">(Object pojo, JsonGenerator jgen,</span></span><br><span class="line"><span class="params">                                     SerializerProvider provider, PropertyWriter writer)</span></span><br><span class="line">                <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">            <span class="keyword">if</span> (!writer.getName().equals(<span class="string">&quot;age&quot;</span>)) &#123;</span><br><span class="line">                writer.serializeAsField(pojo, jgen, provider);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">//设置 FilterProvider</span></span><br><span class="line">    <span class="type">FilterProvider</span> <span class="variable">filterProvider</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleFilterProvider</span>().addFilter(<span class="string">&quot;myFilter&quot;</span>, newFilter);</span><br><span class="line">    <span class="comment">// 造数据</span></span><br><span class="line">    <span class="type">Person</span> <span class="variable">person</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">    person.setName(<span class="string">&quot;Tom&quot;</span>);</span><br><span class="line">    person.setAge(<span class="number">40</span>); <span class="comment">// 该属性将被忽略</span></span><br><span class="line">    person.setDate(<span class="keyword">new</span> <span class="title class_">Date</span>());</span><br><span class="line">    <span class="comment">// 序列化</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">jsonString</span> <span class="operator">=</span> mapper.setFilterProvider(filterProvider).writeValueAsString(person);</span><br><span class="line">    System.out.println(jsonString);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>打印输出：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;Tom&quot;</span>,<span class="string">&quot;date&quot;</span>:<span class="number">1595780842754</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义序列化类"><a href="#自定义序列化类" class="headerlink" title="自定义序列化类"></a>自定义序列化类</h2><p>当 Jackson 默认序列化和反序列化的类不能满足实际需要，可以自定义新的序列化和反序列化的类。</p>
+<p>自定义序列化类：自定义的序列化类需要直接或间接继承 StdSerializer 或 JsonSerializer，同时需要利用 JsonGenerator 生成 json，重写方法 serialize，示例如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">CustomSerializer</span> <span class="keyword">extends</span> <span class="title class_">StdSerializer</span>&lt;Person&gt; &#123;</span><br><span class="line">    <span class="keyword">protected</span> <span class="title function_">CustomSerializer</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(Person.class);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">serialize</span><span class="params">(Person person, JsonGenerator jgen, SerializerProvider provider)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        jgen.writeStartObject();</span><br><span class="line">        jgen.writeNumberField(<span class="string">&quot;age&quot;</span>, person.getAge());</span><br><span class="line">        jgen.writeStringField(<span class="string">&quot;name&quot;</span>, person.getName());</span><br><span class="line">        jgen.writeStringField(<span class="string">&quot;msg&quot;</span>, <span class="string">&quot;已被自定义序列化&quot;</span>);</span><br><span class="line">        jgen.writeEndObject();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>JsonGenerator 有多种 write 方法以支持生成复杂的类型的 json，比如 writeArray，writeTree 等 。若想单独创建 JsonGenerator，可以通过 JsonFactory() 的 createGenerator。</p>
+<p>自定义反序列化类：自定义的反序列化类需要直接或间接继承 StdDeserializer 或 StdDeserializer，同时需要利用 JsonParser 读取 json，重写方法 deserialize，示例如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">CustomDeserializer</span> <span class="keyword">extends</span> <span class="title class_">StdDeserializer</span>&lt;Person&gt; &#123;</span><br><span class="line">    <span class="keyword">protected</span> <span class="title function_">CustomDeserializer</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(Person.class);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Person <span class="title function_">deserialize</span><span class="params">(JsonParser jp, DeserializationContext ctxt)</span></span><br><span class="line">            <span class="keyword">throws</span> IOException, JsonProcessingException &#123;</span><br><span class="line">        <span class="type">JsonNode</span> <span class="variable">node</span> <span class="operator">=</span> jp.getCodec().readTree(jp);</span><br><span class="line">        <span class="type">Person</span> <span class="variable">person</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">        <span class="type">int</span> <span class="variable">age</span> <span class="operator">=</span> (Integer) ((IntNode) node.get(<span class="string">&quot;age&quot;</span>)).numberValue();</span><br><span class="line">        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> node.get(<span class="string">&quot;name&quot;</span>).asText();</span><br><span class="line">        person.setAge(age);</span><br><span class="line">        person.setName(name);</span><br><span class="line">        <span class="keyword">return</span> person;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>JsonParser 提供很多方法来读取 json 信息，如 isClosed(), nextToken(), getValueAsString()等。若想单独创建 JsonParser，可以通过 JsonFactory() 的 createParser。</p>
+<p>定义好自定义序列化类和自定义反序列化类，若想在程序中调用它们，还需要注册到 ObjectMapper 的 Module，示例如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test9</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">ObjectMapper</span> <span class="variable">mapper</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line">    <span class="comment">// 生成 module</span></span><br><span class="line">    <span class="type">SimpleModule</span> <span class="variable">module</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleModule</span>(<span class="string">&quot;myModule&quot;</span>);</span><br><span class="line">    <span class="keyword">module</span>.addSerializer(<span class="keyword">new</span> <span class="title class_">CustomSerializer</span>());</span><br><span class="line">    <span class="keyword">module</span>.addDeserializer(Person.class, <span class="keyword">new</span> <span class="title class_">CustomDeserializer</span>());</span><br><span class="line">    <span class="comment">// 注册 module</span></span><br><span class="line">    mapper.registerModule(<span class="keyword">module</span>);</span><br><span class="line">    <span class="comment">// 造数据</span></span><br><span class="line">    <span class="type">Person</span> <span class="variable">person</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">    person.setName(<span class="string">&quot;Tom&quot;</span>);</span><br><span class="line">    person.setAge(<span class="number">40</span>);</span><br><span class="line">    person.setDate(<span class="keyword">new</span> <span class="title class_">Date</span>());</span><br><span class="line">    System.out.println(<span class="string">&quot;序列化&quot;</span>);</span><br><span class="line">    <span class="type">String</span> <span class="variable">jsonString</span> <span class="operator">=</span> mapper.writerWithDefaultPrettyPrinter().writeValueAsString(person);</span><br><span class="line">    System.out.println(jsonString);</span><br><span class="line">    System.out.println(<span class="string">&quot;反序列化&quot;</span>);</span><br><span class="line">    <span class="type">Person</span> <span class="variable">deserializedPerson</span> <span class="operator">=</span> mapper.readValue(jsonString, Person.class);</span><br><span class="line">    System.out.println(deserializedPerson);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者也可通过注解方式加在 java 对象的属性，方法或类上面来调用它们：</p>
+<ul>
+<li>@JsonSerialize(using &#x3D; CustomSerializer.class)</li>
+<li>@JsonDeserialize(using &#x3D; CustomDeserializer.class)</li>
+</ul>
+<h2 id="树模型处理"><a href="#树模型处理" class="headerlink" title="树模型处理"></a>树模型处理</h2><p>Jackson 也提供了树模型(tree model)来生成和解析 json。若想修改或访问 json 部分属性，树模型是不错的选择。树模型由 JsonNode 节点组成。程序中常常使用 ObjectNode，ObjectNode 继承于 JsonNode，示例如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test10</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">ObjectMapper</span> <span class="variable">mapper</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line">    <span class="comment">//构建 ObjectNode</span></span><br><span class="line">    <span class="type">ObjectNode</span> <span class="variable">personNode</span> <span class="operator">=</span> mapper.createObjectNode();</span><br><span class="line">    <span class="comment">//添加/更改属性</span></span><br><span class="line">    personNode.put(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;Tom&quot;</span>);</span><br><span class="line">    personNode.put(<span class="string">&quot;age&quot;</span>, <span class="number">40</span>);</span><br><span class="line">    <span class="type">ObjectNode</span> <span class="variable">addressNode</span> <span class="operator">=</span> mapper.createObjectNode();</span><br><span class="line">    addressNode.put(<span class="string">&quot;zip&quot;</span>, <span class="string">&quot;000000&quot;</span>);</span><br><span class="line">    addressNode.put(<span class="string">&quot;street&quot;</span>, <span class="string">&quot;Road NanJing&quot;</span>);</span><br><span class="line">    <span class="comment">//设置子节点</span></span><br><span class="line">    personNode.set(<span class="string">&quot;address&quot;</span>, addressNode);</span><br><span class="line">    System.out.println(<span class="string">&quot;构建 ObjectNode:\n&quot;</span> + personNode.toString());</span><br><span class="line">    <span class="comment">//通过 path 查找节点</span></span><br><span class="line">    <span class="type">JsonNode</span> <span class="variable">searchNode</span> <span class="operator">=</span> personNode.path(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;查找子节点 name:\n&quot;</span> + searchNode.asText());</span><br><span class="line">    <span class="comment">//删除属性</span></span><br><span class="line">    ((ObjectNode) personNode).remove(<span class="string">&quot;address&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;删除后的 ObjectNode:\n&quot;</span> + personNode.toString());</span><br><span class="line">    <span class="comment">//读取 json</span></span><br><span class="line">    <span class="type">JsonNode</span> <span class="variable">rootNode</span> <span class="operator">=</span> mapper.readTree(personNode.toString());</span><br><span class="line">    System.out.println(<span class="string">&quot;Json 转 JsonNode:\n&quot;</span> + rootNode);</span><br><span class="line">    <span class="comment">//JsonNode 转换成 java 对象</span></span><br><span class="line">    <span class="type">Person</span> <span class="variable">person</span> <span class="operator">=</span> mapper.treeToValue(personNode, Person.class);</span><br><span class="line">    System.out.println(<span class="string">&quot;JsonNode 转对象:\n&quot;</span> + person);</span><br><span class="line">    <span class="comment">//java 对象转换成 JsonNode</span></span><br><span class="line">    <span class="type">JsonNode</span> <span class="variable">node</span> <span class="operator">=</span> mapper.valueToTree(person);</span><br><span class="line">    System.out.println(<span class="string">&quot;对象转 JsonNode:\n&quot;</span> + node);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>打印输出：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">构建 ObjectNode:</span><br><span class="line">&#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;Tom&quot;</span>,<span class="string">&quot;age&quot;</span>:<span class="number">40</span>,<span class="string">&quot;address&quot;</span>:&#123;<span class="string">&quot;zip&quot;</span>:<span class="string">&quot;000000&quot;</span>,<span class="string">&quot;street&quot;</span>:<span class="string">&quot;Road NanJing&quot;</span>&#125;&#125;</span><br><span class="line">查找子节点 name:</span><br><span class="line">Tom</span><br><span class="line">删除后的 ObjectNode:</span><br><span class="line">&#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;Tom&quot;</span>,<span class="string">&quot;age&quot;</span>:<span class="number">40</span>&#125;</span><br><span class="line">Json 转 JsonNode:</span><br><span class="line">&#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;Tom&quot;</span>,<span class="string">&quot;age&quot;</span>:<span class="number">40</span>&#125;</span><br><span class="line">JsonNode 转对象:</span><br><span class="line">JackSonTest.Person(name=Tom, age=<span class="number">40</span>, date=<span class="literal">null</span>, height=<span class="number">0</span>)</span><br><span class="line">对象转 JsonNode:</span><br><span class="line">&#123;<span class="string">&quot;name&quot;</span>:<span class="string">&quot;Tom&quot;</span>,<span class="string">&quot;age&quot;</span>:<span class="number">40</span>,<span class="string">&quot;date&quot;</span>:<span class="literal">null</span>,<span class="string">&quot;height&quot;</span>:<span class="number">0</span>&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/07/Jackson%E9%85%8D%E7%BD%AE%E5%A4%A7%E5%85%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/10/07/Jackson%E9%85%8D%E7%BD%AE%E5%A4%A7%E5%85%A8/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-10-07 19:22:01" itemprop="dateCreated datePublished" datetime="2022-10-07T19:22:01+08:00">2022-10-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-29 22:17:56" itemprop="dateModified" datetime="2022-06-29T22:17:56+08:00">2022-06-29</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Jackson配置大全"><a href="#Jackson配置大全" class="headerlink" title="Jackson配置大全"></a>Jackson配置大全</h1><hr>
+<p>jackson支持以下格式</p>
+<p>Avro, BSON, CBOR, CSV, Smile, (Java) Properties, Protobuf, TOML, XML or YAML;</p>
+<h2 id="基础注解"><a href="#基础注解" class="headerlink" title="基础注解"></a>基础注解</h2><table>
+<thead>
+<tr>
+<th><strong>注解</strong></th>
+<th><strong>用法</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@JsonProperty</td>
+<td>用于属性，把属性的名称序列化时转换为另外一个名称。示例：@JsonProperty(“birth_date”) private Date birthDate</td>
+</tr>
+<tr>
+<td>@JsonIgnore</td>
+<td>可用于字段、getter&#x2F;setter、构造函数参数上，作用相同，都会对相应的字段产生影响。使相应字段不参与序列化和反序列化。</td>
+</tr>
+<tr>
+<td>@JsonIgnoreProperties</td>
+<td>该注解是类注解，使得相应字段不参与序列化和反序列化。示例:@JsonIgnoreProperties({“password”,”id”}) public class Person</td>
+</tr>
+<tr>
+<td>@JsonFormat</td>
+<td>用于属性或者方法，把属性的格式序列化时转换成指定的格式。示例：@JsonFormat(timezone &#x3D; “GMT+8”, pattern &#x3D; “yyyy-MM-dd HH:mm”) public Date getBirthDate()</td>
+</tr>
+<tr>
+<td>@JsonPropertyOrder</td>
+<td>该注解是类注解,和 @JsonProperty的index属性类似，指定属性在序列化时 json 中的顺序 ， 示例：@JsonPropertyOrder({ “birth_Date”, “name” }) public class Person</td>
+</tr>
+<tr>
+<td>@JsonCreator</td>
+<td>用于构造方法，和 @JsonProperty 配合使用，适用有参数的构造方法。示例：@JsonCreator public Person(@JsonProperty(“name”)String name) {…}</td>
+</tr>
+<tr>
+<td>@JsonAnySetter</td>
+<td>用于属性或者方法，设置未反序列化的属性名和值作为键值存储到 map 中 @JsonAnySetter public void set(String key, Object value) { map.put(key, value); }</td>
+</tr>
+<tr>
+<td>@JsonAnyGetter</td>
+<td>应用于属性或方法，获取所有未序列化的属性 public Map&lt;String, Object&gt; any() { return map; }</td>
+</tr>
+<tr>
+<td>@JsonSetter</td>
+<td>应用于属性或方法，指定反序列化的字段名 @JsonSetter(“_id”) public String setId(String id) { return this.id&#x3D;id; }</td>
+</tr>
+<tr>
+<td>@JsonGetter</td>
+<td>应用于方法或字段，指定序列化的字段名 @JsonGetter(“_id”) public String getId() { return id; }</td>
+</tr>
+<tr>
+<td>@JsonNaming</td>
+<td>类注解。序列化的时候该注解可将驼峰命名的字段名转换为下划线分隔的小写字母命名方式。反序列化的时候可以将下划线分隔的小写字母转换为驼峰命名的字段名。示例：@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)</td>
+</tr>
+<tr>
+<td>@JsonRootName</td>
+<td>类注解。需开启mapper.enable(SerializationFeature.WRAP_ROOT_VALUE)，用于序列化时输出带有根属性名称的JSON串，形式如 {“root_name”:{“id”:1,”name”:”zhangsan”}}。</td>
+</tr>
+<tr>
+<td>@JsonAutoDetect</td>
+<td>指定属性（反）序列化范围</td>
+</tr>
+<tr>
+<td>@JsonIgnoreType</td>
+<td>将忽略这个类型的（反）序列化</td>
+</tr>
+<tr>
+<td>@JsonInclude</td>
+<td>对空值如何序列化</td>
+</tr>
+<tr>
+<td>@JsonPropertyDescription</td>
+<td>json的schema描述</td>
+</tr>
+<tr>
+<td>@JsonUnwrapped</td>
+<td>将其属性上拉一个层级展开</td>
+</tr>
+<tr>
+<td>@JsonView</td>
+<td>不同接口下返回不同的属性</td>
+</tr>
+<tr>
+<td>@JacksonInject</td>
+<td>json字段有一些缺少的属性，抓换成实体类的时候没有的属性将为null,但是我们在某些需求当中需要将为null的属性都设置为默认</td>
+</tr>
+<tr>
+<td>@JsonEnumDefaultValue</td>
+<td>反序列化时未知时的枚举值</td>
+</tr>
+<tr>
+<td>@JsonRawValue</td>
+<td>使用原始值,而不会进行转义 eg:”content”:”Test content”,而不是&quot;content&quot;:&quot;Test content&quot;</td>
+</tr>
+<tr>
+<td>@JsonValue</td>
+<td>最多能用于类的一个属性(多个属性应用此注解将抛出异常)，并将此属性上拉一个层级展开，其他字段不参与（反）序列化</td>
+</tr>
+<tr>
+<td>@JsonFilter</td>
+<td>应用于属性， 过滤属性</td>
+</tr>
+<tr>
+<td>@JsonAlias</td>
+<td>应用于属性，反序列化时多个候选字段名能够映射到同一个属性上</td>
+</tr>
+<tr>
+<td>@JsonMerge</td>
+<td>应用于属性，反序列化时集合类型属性时，将Json中的元素与字段中的默认元素融合 eg:@JsonMerge private List<String> hobbies &#x3D; new ArrayList&lt;&gt;(Collections.singletonList(“篮球”));</td>
+</tr>
+</tbody></table>
+<h2 id="多态类型处理注解"><a href="#多态类型处理注解" class="headerlink" title="多态类型处理注解"></a>多态类型处理注解</h2><ul>
+<li><p>@JsonSubTypes: 类注解 类注解用于指示注解类型的子类型； 使用逻辑类型名称（而不是类名称）指定反序列化多态类型</p>
+</li>
+<li><p>@JsonTypeId: 类&#x2F;属性&#x2F;方法注解 用于指示属性值应该用作对象的 Type Id ，而不是使用类名或外部类型名。</p>
+</li>
+<li><p>@JsonTypeInfo: 类&#x2F;属性注解 用于指示序列化中包含哪些类型信息以及如何包含在内的详细信息。</p>
+</li>
+<li><p>@JsonTypeName: 类注解 用于定义用于注释类的逻辑类型名称；类型名称可以用作Type Id（取决于@JsonTypeInfo的设置） Java Jackson @JsonTypeInfo 多态类型处理</p>
+</li>
+</ul>
+<h2 id="对象双向引用及对象ID"><a href="#对象双向引用及对象ID" class="headerlink" title="对象双向引用及对象ID"></a>对象双向引用及对象ID</h2><ul>
+<li><p>@JsonManagedReference，@JsonBackReference: 这对注解，用于指示和处理用一对匹配属性表示的父&#x2F;子关系 (双向引用将导致无限递归)</p>
+</li>
+<li><p>@JsonIdentityInfo: 类&#x2F;属性注解 用于指示在序列化&#x2F;反序列化值时要使用“对象标识id”，以便可以正确反序列化对单个 Java 对象的多个引用。</p>
+</li>
+</ul>
+<h2 id="SpringBoot-Jackson-配置大全"><a href="#SpringBoot-Jackson-配置大全" class="headerlink" title="SpringBoot Jackson 配置大全"></a>SpringBoot Jackson 配置大全</h2><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">jackson:</span></span><br><span class="line">    <span class="comment"># 设置属性命名策略,对应jackson下PropertyNamingStrategy中的常量值，SNAKE_CASE-返回的json驼峰式转下划线，json body下划线传到后端自动转驼峰式</span></span><br><span class="line">    <span class="attr">property-naming-strategy:</span> <span class="string">SNAKE_CASE</span></span><br><span class="line">    <span class="comment"># 全局设置@JsonFormat的格式pattern</span></span><br><span class="line">    <span class="attr">date-format:</span> <span class="string">yyyy-MM-dd</span> <span class="string">HH:mm:ss</span></span><br><span class="line">    <span class="comment"># 当地时区</span></span><br><span class="line">    <span class="attr">locale:</span> <span class="string">zh_CN</span></span><br><span class="line">    <span class="comment"># 设置全局时区</span></span><br><span class="line">    <span class="attr">time-zone:</span> <span class="string">GMT+8</span></span><br><span class="line">    <span class="comment"># 常用，全局设置pojo或被@JsonInclude注解的属性的序列化方式</span></span><br><span class="line">    <span class="attr">default-property-inclusion:</span> <span class="string">NON_NULL</span> <span class="comment">#不为空的属性才会序列化,具体属性可看JsonInclude.Include</span></span><br><span class="line">    <span class="comment"># 常规默认,枚举类SerializationFeature中的枚举属性为key，值为boolean设置jackson序列化特性,具体key请看SerializationFeature源码</span></span><br><span class="line">    <span class="attr">visibility:</span></span><br><span class="line">      <span class="comment">#属性序列化的可见范围</span></span><br><span class="line">      <span class="attr">getter:</span> <span class="string">non_private</span></span><br><span class="line">      <span class="comment">#属性反序列化的可见范围</span></span><br><span class="line">      <span class="attr">setter:</span> <span class="string">protected_and_public</span></span><br><span class="line">      <span class="comment">#静态工厂方法的反序列化</span></span><br><span class="line">      <span class="attr">CREATOR:</span> <span class="string">public_only</span></span><br><span class="line">      <span class="comment">#字段</span></span><br><span class="line">      <span class="attr">FIELD:</span> <span class="string">public_only</span></span><br><span class="line">      <span class="comment">#布尔的序列化</span></span><br><span class="line">      <span class="attr">IS_GETTER:</span> <span class="string">public_only</span></span><br><span class="line">      <span class="comment">#所有类型(即getter setter FIELD）不受影响,无意义</span></span><br><span class="line">      <span class="attr">NONE:</span> <span class="string">public_only</span></span><br><span class="line">      <span class="comment">#所有类型(即getter setter FIELD）都受其影响（慎用）</span></span><br><span class="line">      <span class="attr">ALL:</span> <span class="string">public_only</span></span><br><span class="line">    <span class="attr">serialization:</span></span><br><span class="line">      <span class="comment">#反序列化是否有根节点</span></span><br><span class="line">      <span class="attr">WRAP_ROOT_VALUE:</span> <span class="literal">false</span></span><br><span class="line">      <span class="comment">#是否使用缩进，格式化输出</span></span><br><span class="line">      <span class="attr">INDENT_OUTPUT:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">FAIL_ON_EMPTY_BEANS:</span> <span class="literal">true</span> <span class="comment"># 对象不含任何字段时是否报错，默认true</span></span><br><span class="line">      <span class="attr">FAIL_ON_SELF_REFERENCES:</span> <span class="literal">true</span> <span class="comment">#循环引用报错</span></span><br><span class="line">      <span class="attr">WRAP_EXCEPTIONS:</span> <span class="literal">true</span> <span class="comment">#是否包装异常</span></span><br><span class="line">      <span class="attr">FAIL_ON_UNWRAPPED_TYPE_IDENTIFIERS:</span> <span class="literal">true</span> <span class="comment">#JsonUnwrapped标记的类有类型信息是否报错</span></span><br><span class="line">      <span class="attr">WRITE_SELF_REFERENCES_AS_NULL:</span> <span class="literal">false</span> <span class="comment">#循环引用返回null</span></span><br><span class="line">      <span class="attr">CLOSE_CLOSEABLE:</span> <span class="literal">true</span> <span class="comment">#若对象实现了CLOSEABLE接口，在序列化后是否调用Close方法</span></span><br><span class="line">      <span class="attr">FLUSH_AFTER_WRITE_VALUE:</span> <span class="literal">false</span> <span class="comment">#流对象序列化之后是否强制刷新</span></span><br><span class="line">      <span class="attr">WRITE_DATES_AS_TIMESTAMPS:</span> <span class="literal">true</span> <span class="comment"># 返回的java.util.date转换成时间戳</span></span><br><span class="line">      <span class="attr">WRITE_DATES_WITH_ZONE_ID:</span> <span class="literal">true</span> <span class="comment">#2011-12-03T10:15:30+01:00[Europe/Paris]带时区id</span></span><br><span class="line">      <span class="attr">WRITE_DURATIONS_AS_TIMESTAMPS:</span> <span class="literal">true</span> <span class="comment">#将DURATIONS转换成时间戳</span></span><br><span class="line">      <span class="attr">WRITE_CHAR_ARRAYS_AS_JSON_ARRAYS:</span> <span class="literal">false</span> <span class="comment">#是否字符数组输出json数组 (false则输出字符串)</span></span><br><span class="line">      <span class="attr">WRITE_ENUMS_USING_TO_STRING:</span> <span class="literal">false</span> <span class="comment"># 将枚举输出toString</span></span><br><span class="line">      <span class="attr">WRITE_ENUMS_USING_INDEX:</span> <span class="literal">false</span> <span class="comment">#枚举下标</span></span><br><span class="line">      <span class="attr">WRITE_ENUM_KEYS_USING_INDEX:</span> <span class="literal">false</span> <span class="comment">#枚举key类似</span></span><br><span class="line">      <span class="attr">WRITE_NULL_MAP_VALUES:</span> <span class="literal">false</span> <span class="comment">#是否输出map中的空entry(此特性已过期，请使用JsonInclude注解)</span></span><br><span class="line">      <span class="attr">WRITE_EMPTY_JSON_ARRAYS:</span> <span class="literal">true</span> <span class="comment"># 对象属性值是空集合是否输出空json数组</span></span><br><span class="line">      <span class="attr">WRITE_SINGLE_ELEM_ARRAYS_UNWRAPPED:</span> <span class="literal">false</span> <span class="comment">#是否将单个元素的集合展开，（即：去除数组符号&quot;[]&quot;）</span></span><br><span class="line">      <span class="attr">WRITE_BIGDECIMAL_AS_PLAIN:</span> <span class="literal">false</span> <span class="comment">#是否调用BigDecimal#toPlainString()输出</span></span><br><span class="line">      <span class="attr">WRITE_DATE_TIMESTAMPS_AS_NANOSECONDS:</span> <span class="comment">#将timestamp输出为纳秒</span></span><br><span class="line">      <span class="attr">ORDER_MAP_ENTRIES_BY_KEYS:</span> <span class="literal">false</span> <span class="comment">#map序列化后，是否用key对其排序</span></span><br><span class="line">      <span class="attr">EAGER_SERIALIZER_FETCH:</span> <span class="literal">true</span> <span class="comment">#是否马上获取序列化器</span></span><br><span class="line">      <span class="attr">USE_EQUALITY_FOR_OBJECT_ID:</span> <span class="literal">false</span> <span class="comment">#是否使用objectId比较是否相等（在ORM框架Hibernate中有应用）</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 枚举类DeserializationFeature中的枚举属性为key，值为boolean设置jackson反序列化特性,具体key请看DeserializationFeature源码</span></span><br><span class="line">    <span class="attr">deserialization:</span></span><br><span class="line">      <span class="attr">USE_BIG_DECIMAL_FOR_FLOATS:</span> <span class="literal">false</span> <span class="comment">#将浮点数反序列化为BIG_DECIMAL</span></span><br><span class="line">      <span class="attr">USE_BIG_INTEGER_FOR_INTS:</span> <span class="literal">false</span> <span class="comment">#将整数反序列化为BIG_INTEGER</span></span><br><span class="line">      <span class="attr">USE_LONG_FOR_INTS:</span> <span class="literal">false</span> <span class="comment">#将整型反序列化为长整</span></span><br><span class="line">      <span class="attr">USE_JAVA_ARRAY_FOR_JSON_ARRAY:</span> <span class="literal">false</span> <span class="comment">#无明确类型时，是否将json数组反序列化为java数组（若是true，就对应Object[] ,反之就是List&lt;?&gt;）</span></span><br><span class="line">      <span class="attr">FAIL_ON_UNKNOWN_PROPERTIES:</span> <span class="literal">false</span> <span class="comment"># 常用,json中含pojo不存在属性时是否失败报错,默认true</span></span><br><span class="line">      <span class="attr">FAIL_ON_NULL_FOR_PRIMITIVES:</span> <span class="literal">false</span> <span class="comment">#将null反序列化为基本数据类型是否报错</span></span><br><span class="line">      <span class="attr">FAIL_ON_NUMBERS_FOR_ENUMS:</span> <span class="literal">false</span> <span class="comment">#用整数反序列化为枚举是否报错</span></span><br><span class="line">      <span class="attr">FAIL_ON_INVALID_SUBTYPE:</span> <span class="literal">false</span> <span class="comment">#找不至合适的子类否报错 （如注解JsonTypeInfo指定的子类型）</span></span><br><span class="line">      <span class="attr">FAIL_ON_READING_DUP_TREE_KEY:</span> <span class="literal">false</span> <span class="comment">#出现重复的json字段是否报错</span></span><br><span class="line">      <span class="attr">FAIL_ON_IGNORED_PROPERTIES:</span> <span class="literal">false</span> <span class="comment">#如果json中出现了java实体字段中已显式标记应当忽略的字段，是否报错</span></span><br><span class="line">      <span class="attr">FAIL_ON_UNRESOLVED_OBJECT_IDS:</span> <span class="literal">true</span> <span class="comment">#如果反序列化发生了不可解析的ObjectId是否报错</span></span><br><span class="line">      <span class="attr">FAIL_ON_MISSING_CREATOR_PROPERTIES:</span> <span class="literal">false</span> <span class="comment">#如果缺少静态工厂方法的参数是否报错（false,则使用null代替需要的参数）</span></span><br><span class="line">      <span class="attr">FAIL_ON_NULL_CREATOR_PROPERTIES:</span> <span class="literal">false</span> <span class="comment">#将空值绑定到构造方法或静态工厂方法的参数是否报错</span></span><br><span class="line">      <span class="attr">FAIL_ON_MISSING_EXTERNAL_TYPE_ID_PROPERTY:</span> <span class="literal">false</span> <span class="comment">#注解JsonTypeInfo.As#EXTERNAL_PROPERTY标记的属性缺失，是否报错</span></span><br><span class="line">      <span class="attr">FAIL_ON_TRAILING_TOKENS:</span> <span class="literal">false</span> <span class="comment">#出现尾随令牌是否报错（如果是true,则调用JsonParser#nextToken，检查json的完整性）</span></span><br><span class="line">      <span class="attr">WRAP_EXCEPTIONS:</span> <span class="literal">true</span> <span class="comment">#是否包装反序列化出现的异常</span></span><br><span class="line">      <span class="attr">ACCEPT_SINGLE_VALUE_AS_ARRAY:</span> <span class="literal">true</span> <span class="comment">#反序列化时是否将一个对象封装成单元素数组</span></span><br><span class="line">      <span class="attr">UNWRAP_SINGLE_VALUE_ARRAYS:</span> <span class="literal">false</span> <span class="comment">#反序列化时是否将单元素数组展开为一个对象</span></span><br><span class="line">      <span class="attr">UNWRAP_ROOT_VALUE:</span> <span class="literal">false</span> <span class="comment">#是否将取消根节点的包装</span></span><br><span class="line">      <span class="attr">ACCEPT_EMPTY_STRING_AS_NULL_OBJECT:</span> <span class="literal">false</span> <span class="comment">#是否将空字符(&quot;&quot;)串当作null对象</span></span><br><span class="line">      <span class="attr">ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT:</span> <span class="literal">false</span> <span class="comment">#是否接受将空数组(&quot;[]&quot;)作为null</span></span><br><span class="line">      <span class="attr">ACCEPT_FLOAT_AS_INT:</span> <span class="literal">true</span> <span class="comment">#是否接受将浮点数作为整数</span></span><br><span class="line">      <span class="attr">READ_ENUMS_USING_TO_STRING:</span> <span class="literal">false</span> <span class="comment">#按照枚举toString()方法读取，（false则按枚举的name()方法读取）</span></span><br><span class="line">      <span class="attr">READ_UNKNOWN_ENUM_VALUES_AS_NULL:</span> <span class="literal">false</span> <span class="comment">#读取到未知的枚举当作null</span></span><br><span class="line">      <span class="attr">READ_UNKNOWN_ENUM_VALUES_USING_DEFAULT_VALUE:</span> <span class="literal">false</span> <span class="comment">#读取到未知的枚举,将其当作被JsonEnumDefaultValue注解标记的枚举</span></span><br><span class="line">      <span class="attr">READ_DATE_TIMESTAMPS_AS_NANOSECONDS:</span> <span class="literal">true</span> <span class="comment">#将时间戳视为纳秒(false,则视为毫秒)</span></span><br><span class="line">      <span class="attr">ADJUST_DATES_TO_CONTEXT_TIME_ZONE:</span> <span class="literal">true</span> <span class="comment">#反序列化是否会适应DeserializationContext#getTimeZone()提供的时区 （此特性仅对java8的时间/日期有效）</span></span><br><span class="line">      <span class="attr">EAGER_DESERIALIZER_FETCH:</span> <span class="literal">true</span>  <span class="comment">#是否马上获取反序列化器</span></span><br><span class="line">    <span class="comment"># 枚举类MapperFeature中的枚举属性为key，值为boolean设置jackson ObjectMapper特性</span></span><br><span class="line">    <span class="comment"># ObjectMapper在jackson中负责json的读写、json与pojo的互转、json tree的互转,具体特性请看MapperFeature,常规默认即可</span></span><br><span class="line">    <span class="attr">mapper:</span></span><br><span class="line">      <span class="attr">USE_ANNOTATIONS:</span> <span class="literal">true</span> <span class="comment">#是否使用注解自省（检查JsonProperties这些）</span></span><br><span class="line">      <span class="comment"># 使用getter取代setter探测属性，这是针对集合类型，可以直接修改集合的属性</span></span><br><span class="line">      <span class="attr">USE_GETTERS_AS_SETTERS:</span> <span class="literal">true</span> <span class="comment">#默认false</span></span><br><span class="line">      <span class="attr">PROPAGATE_TRANSIENT_MARKER:</span> <span class="literal">false</span> <span class="comment">#如何处理transient字段，如果true(不能访问此属性) ，若是false则不能通过字段访问（还是可以使用getter和setter访问）</span></span><br><span class="line">      <span class="attr">AUTO_DETECT_CREATORS:</span> <span class="literal">true</span> <span class="comment">#是否自动检测构造方法或单参且名为valueOf的静态工厂方法</span></span><br><span class="line">      <span class="attr">AUTO_DETECT_FIELDS:</span> <span class="literal">true</span> <span class="comment">#是否自动检测字段 （若true,则将所有public实例字段视为为属性）</span></span><br><span class="line">      <span class="attr">AUTO_DETECT_GETTERS:</span> <span class="literal">true</span> <span class="comment">#确定是否根据标准 Bean 命名约定自动检测常规“getter”方法的（不包括is getter）</span></span><br><span class="line">      <span class="attr">AUTO_DETECT_IS_GETTERS:</span> <span class="literal">true</span> <span class="comment">#确定是否根据标准 Bean 命名约定自动检测“is getter”方法</span></span><br><span class="line">      <span class="attr">AUTO_DETECT_SETTERS:</span> <span class="literal">false</span> <span class="comment"># 确定是否根据标准 Bean 命名约定自动检测“setter”方法</span></span><br><span class="line">      <span class="attr">REQUIRE_SETTERS_FOR_GETTERS:</span> <span class="literal">false</span> <span class="comment">#getter方法必需要有对应的setter或字段或构造方法参数，才能视为一个属性</span></span><br><span class="line">      <span class="attr">ALLOW_FINAL_FIELDS_AS_MUTATORS:</span> <span class="literal">true</span> <span class="comment">#是否可以修改final成员字段</span></span><br><span class="line">      <span class="attr">INFER_PROPERTY_MUTATORS:</span> <span class="literal">true</span> <span class="comment">#是否能推断属性，(即使用字段和setter是不可见的，但getter可见即可推断属性)</span></span><br><span class="line">      <span class="attr">INFER_CREATOR_FROM_CONSTRUCTOR_PROPERTIES:</span> <span class="literal">true</span> <span class="comment">#是否自动推断ConstructorProperties注解</span></span><br><span class="line">      <span class="attr">CAN_OVERRIDE_ACCESS_MODIFIERS:</span> <span class="literal">true</span> <span class="comment">#调用AccessibleObject#setAccessible设为true .将原来不可见的属性，变为可见</span></span><br><span class="line">      <span class="attr">OVERRIDE_PUBLIC_ACCESS_MODIFIERS:</span> <span class="literal">true</span> <span class="comment">#对所有的属性调用AccessibleObject#setAccessible设为true .（即使用是公共的）</span></span><br><span class="line">      <span class="attr">USE_STATIC_TYPING:</span> <span class="literal">false</span> <span class="comment">#序列化使用声明的静态类型还是动态类型  JsonSerialize#typing注解可覆盖它</span></span><br><span class="line">      <span class="attr">USE_BASE_TYPE_AS_DEFAULT_IMPL:</span> <span class="literal">false</span> <span class="comment"># 反序列化是否使用基本类作为默实现 @JsonTypeInfo.defaultImpl</span></span><br><span class="line">      <span class="attr">DEFAULT_VIEW_INCLUSION:</span> <span class="literal">true</span> <span class="comment">#没有JsonView注解标记的属性是否会被包含在json序列化视图中</span></span><br><span class="line">      <span class="attr">SORT_PROPERTIES_ALPHABETICALLY:</span> <span class="literal">false</span> <span class="comment">#按字母表顺序序列化字段（若false，按字段声明的顺序）</span></span><br><span class="line">      <span class="attr">ACCEPT_CASE_INSENSITIVE_PROPERTIES:</span> <span class="literal">false</span> <span class="comment">#反序列化属性时不区分大小写 （true时，会影响性能）</span></span><br><span class="line">      <span class="attr">ACCEPT_CASE_INSENSITIVE_ENUMS:</span> <span class="literal">false</span> <span class="comment">#枚举反序列化不区别大小写</span></span><br><span class="line">      <span class="attr">ACCEPT_CASE_INSENSITIVE_VALUES:</span> <span class="literal">false</span> <span class="comment">#允许解析一些枚举的基于文本的值类型但忽略反序列化值的大小写 如日期/时间类型反序列化器</span></span><br><span class="line">      <span class="attr">USE_WRAPPER_NAME_AS_PROPERTY_NAME:</span> <span class="literal">false</span> <span class="comment"># 使用包装器名称覆盖属性名称 AnnotationIntrospector#findWrapperName指定的</span></span><br><span class="line">      <span class="attr">USE_STD_BEAN_NAMING:</span> <span class="literal">false</span> <span class="comment"># 是否以强制与 Bean 名称自省严格兼容的功能，若开启后（getURL()）变成URL （jackson默认false, url）</span></span><br><span class="line">      <span class="attr">ALLOW_EXPLICIT_PROPERTY_RENAMING:</span> <span class="literal">false</span> <span class="comment">#是否允许JsonProperty注解覆盖PropertyNamingStrategy</span></span><br><span class="line">      <span class="attr">ALLOW_COERCION_OF_SCALARS:</span> <span class="literal">true</span> <span class="comment"># 是否允许强制使用文本标题 ，即将字符串的&quot;true&quot;当作布尔的true ,字符串的&quot;1.0&quot;当作&quot;double&quot;</span></span><br><span class="line">      <span class="attr">IGNORE_DUPLICATE_MODULE_REGISTRATIONS:</span> <span class="literal">true</span> <span class="comment">#如果模块相同（Module#getTypeId()返回值相同），只有第一次能会真正调用注册方法</span></span><br><span class="line">      <span class="attr">IGNORE_MERGE_FOR_UNMERGEABLE:</span> <span class="literal">true</span> <span class="comment">#在合并不能合并的属性时是否忽略错误</span></span><br><span class="line">      <span class="attr">BLOCK_UNSAFE_POLYMORPHIC_BASE_TYPES:</span> <span class="literal">false</span> <span class="comment">#阻止不安全的基类（如Object Closeable Cloneable AutoCloseable Serializable）</span></span><br><span class="line">    <span class="attr">parser:</span></span><br><span class="line">      <span class="attr">AUTO_CLOSE_SOURCE:</span> <span class="literal">true</span> <span class="comment">#是否自动关闭不属于解析器的底层输入流</span></span><br><span class="line">      <span class="attr">ALLOW_COMMENTS:</span> <span class="literal">false</span> <span class="comment">#是否允许json注解（Json规范是不能加注释的，但这里可以配置）</span></span><br><span class="line">      <span class="attr">ALLOW_YAML_COMMENTS:</span> <span class="literal">false</span> <span class="comment">#是否允许出现yaml注释</span></span><br><span class="line">      <span class="attr">ALLOW_UNQUOTED_FIELD_NAMES:</span> <span class="literal">false</span> <span class="comment">#是否允许出现字段名不带引号</span></span><br><span class="line">      <span class="attr">ALLOW_SINGLE_QUOTES:</span> <span class="literal">false</span> <span class="comment"># 是否允许出现单引号,默认false</span></span><br><span class="line">      <span class="attr">ALLOW_UNQUOTED_CONTROL_CHARS:</span> <span class="literal">false</span> <span class="comment">#是否允许出现未加转义的控制字符</span></span><br><span class="line">      <span class="attr">ALLOW_BACKSLASH_ESCAPING_ANY_CHARACTER:</span> <span class="literal">false</span> <span class="comment">#是否允许对所有字符都可加反斜杠转义</span></span><br><span class="line">      <span class="attr">ALLOW_NUMERIC_LEADING_ZEROS:</span> <span class="literal">false</span> <span class="comment">#是否允许前导的零 000001</span></span><br><span class="line">      <span class="attr">ALLOW_LEADING_DECIMAL_POINT_FOR_NUMBERS:</span> <span class="literal">false</span> <span class="comment">#是否允许前导的小点数 如 &quot;.04314&quot;会被解析成&quot;0.04314&quot;</span></span><br><span class="line">      <span class="attr">ALLOW_NON_NUMERIC_NUMBERS:</span> <span class="literal">false</span> <span class="comment">#是否允许NaN型的浮点数 （&quot;INF&quot;当作正无穷  &quot;-INF&quot;当作负无穷 &quot;NaN&quot;非数字，类型于除数为0）</span></span><br><span class="line">      <span class="attr">ALLOW_MISSING_VALUES:</span> <span class="literal">false</span> <span class="comment"># 是否允许json数组中出现缺失值 （如[&quot;value1&quot;,,&quot;value3&quot;,]将被反序列化为[&quot;value1&quot;, null, &quot;value3&quot;, null]）</span></span><br><span class="line">      <span class="attr">ALLOW_TRAILING_COMMA:</span> <span class="literal">false</span> <span class="comment"># 是否允许json尾部有逗号 （如&#123;&quot;a&quot;: true,&#125;）</span></span><br><span class="line">      <span class="attr">STRICT_DUPLICATE_DETECTION:</span> <span class="literal">false</span> <span class="comment">#是否启用严格的字段名重复检查（开启后会增加20-30%左右的性能开销）</span></span><br><span class="line">      <span class="attr">IGNORE_UNDEFINED:</span> <span class="literal">false</span> <span class="comment">#属性定义未找到是否报错（这不是针对json,是针对Avro, protobuf等需要Schema的格式）</span></span><br><span class="line">      <span class="attr">INCLUDE_SOURCE_IN_LOCATION:</span> <span class="literal">false</span> <span class="comment">#是否包含其源信息（如总字节数，总字符数 行号 列号 ）</span></span><br><span class="line">    <span class="attr">generator:</span></span><br><span class="line">      <span class="attr">AUTO_CLOSE_TARGET:</span> <span class="literal">true</span> <span class="comment">#是否自动关闭不属于生成器的底层输出流</span></span><br><span class="line">      <span class="attr">AUTO_CLOSE_JSON_CONTENT:</span> <span class="literal">true</span> <span class="comment">#是否自动补全json(当有不匹配的JsonToken#START_ARRAY JsonToken#START_OBJECT时)</span></span><br><span class="line">      <span class="attr">FLUSH_PASSED_TO_STREAM:</span> <span class="literal">true</span> <span class="comment">#是否刷新generator</span></span><br><span class="line">      <span class="attr">QUOTE_FIELD_NAMES:</span> <span class="literal">true</span> <span class="comment">#是否为字段名添加引号</span></span><br><span class="line">      <span class="attr">QUOTE_NON_NUMERIC_NUMBERS:</span> <span class="literal">true</span> <span class="comment">#对于NaN浮点数是否加引号</span></span><br><span class="line">      <span class="attr">ESCAPE_NON_ASCII:</span> <span class="literal">false</span> <span class="comment">#非ASCII码是否需要转义</span></span><br><span class="line">      <span class="attr">WRITE_NUMBERS_AS_STRINGS:</span> <span class="literal">false</span> <span class="comment">#将数字当作字符串输出 （防止Javascript长度限制被截断）</span></span><br><span class="line">      <span class="attr">WRITE_BIGDECIMAL_AS_PLAIN:</span> <span class="literal">false</span> <span class="comment">#按BigDecimal的toPlainString()输出</span></span><br><span class="line">      <span class="attr">STRICT_DUPLICATE_DETECTION:</span> <span class="literal">false</span> <span class="comment">#是否启用严格的字段名重复检查</span></span><br><span class="line">      <span class="attr">IGNORE_UNKNOWN:</span> <span class="literal">false</span> <span class="comment">#属性定义未找到是否报错（这不是针对json,是针对Avro, protobuf等需要Schema的格式）</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/07/Eureka/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/10/07/Eureka/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-10-07 19:22:01" itemprop="dateCreated datePublished" datetime="2022-10-07T19:22:01+08:00">2022-10-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-08-13 11:52:02" itemprop="dateModified" datetime="2022-08-13T11:52:02+08:00">2022-08-13</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Eureka注册中心"><a href="#Eureka注册中心" class="headerlink" title="Eureka注册中心"></a>Eureka注册中心</h1><p>假如我们的服务提供者user-service部署了多个实例，如图：</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202208131143161.png" alt="image-20210713214925388"></p>
+<p>几个问题：</p>
+<ul>
+<li>order-service在发起远程调用的时候，该如何得知user-service实例的ip地址和端口？</li>
+<li>有多个user-service实例地址，order-service调用时该如何选择？</li>
+<li>order-service如何得知某个user-service实例是否依然健康，是不是已经宕机？</li>
+</ul>
+<hr>
+<h2 id="Eureka的结构和作用"><a href="#Eureka的结构和作用" class="headerlink" title="Eureka的结构和作用"></a>Eureka的结构和作用</h2><p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202208131144810.png" alt="image-20210713220104956"></p>
+<p>回答之前的各个问题。</p>
+<p>问题1：order-service如何得知user-service实例地址？</p>
+<p>获取地址信息的流程如下：</p>
+<ul>
+<li>user-service服务实例启动后，将自己的信息注册到eureka-server（Eureka服务端）。这个叫服务注册</li>
+<li>eureka-server保存服务名称到服务实例地址列表的映射关系</li>
+<li>order-service根据服务名称，拉取实例地址列表。这个叫服务发现或服务拉取</li>
+</ul>
+<p>问题2：order-service如何从多个user-service实例中选择具体的实例？</p>
+<ul>
+<li>order-service从实例列表中利用负载均衡算法选中一个实例地址</li>
+<li>向该实例地址发起远程调用</li>
+</ul>
+<p>问题3：order-service如何得知某个user-service实例是否依然健康，是不是已经宕机？</p>
+<ul>
+<li>user-service会每隔一段时间（默认30秒）向eureka-server发起请求，报告自己状态，称为心跳</li>
+<li>当超过一定时间没有发送心跳时，eureka-server会认为微服务实例故障，将该实例从服务列表中剔除</li>
+<li>order-service拉取服务时，就能将故障实例排除了</li>
+</ul>
+<blockquote>
+<p>注意：一个微服务，既可以是服务提供者，又可以是服务消费者，因此eureka将服务注册、服务发现等功能统一封装到了eureka-client端</p>
+</blockquote>
+<h2 id="搭建eureka-server"><a href="#搭建eureka-server" class="headerlink" title="搭建eureka-server"></a>搭建eureka-server</h2><h3 id="创建eureka-server服务"><a href="#创建eureka-server服务" class="headerlink" title="创建eureka-server服务"></a>创建eureka-server服务</h3><p>在cloud-demo父工程下，创建一个子模块：</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202208131151694.png" alt="image-20210713220605881"></p>
+<p>填写模块信息：</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202208131151669.png" alt="image-20210713220857396"></p>
+<p>然后填写服务信息：</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202208131151503.png" alt="image-20210713221339022"></p>
+<h3 id="引入eureka依赖"><a href="#引入eureka依赖" class="headerlink" title="引入eureka依赖"></a>引入eureka依赖</h3><p>引入SpringCloud为eureka提供的starter依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-eureka-server<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="编写启动类"><a href="#编写启动类" class="headerlink" title="编写启动类"></a>编写启动类</h3><p>给eureka-server服务编写一个启动类，一定要添加一个@EnableEurekaServer注解，开启eureka的注册中心功能：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.itcast.eureka;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableEurekaServer</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EurekaApplication</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        SpringApplication.run(EurekaApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="编写配置文件"><a href="#编写配置文件" class="headerlink" title="编写配置文件"></a>编写配置文件</h3><p>编写一个application.yml文件，内容如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">10086</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">eureka-server</span></span><br><span class="line"><span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">    <span class="attr">service-url:</span> </span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://127.0.0.1:10086/eureka</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><p>启动微服务，然后在浏览器访问：<a target="_blank" rel="noopener" href="http://127.0.0.1:10086/">http://127.0.0.1:10086</a></p>
+<p>看到下面结果应该是成功了：</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202208131151701.png" alt="image-20210713222157190"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/07/d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/10/07/d/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-10-07 19:22:01" itemprop="dateCreated datePublished" datetime="2022-10-07T19:22:01+08:00">2022-10-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-09-24 23:19:38" itemprop="dateModified" datetime="2022-09-24T23:19:38+08:00">2022-09-24</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Java-web"><a href="#Java-web" class="headerlink" title="Java web"></a>Java web</h1><ul>
+<li><p>Servlet</p>
+</li>
+<li><p>Filter</p>
+</li>
+<li><p>Listener</p>
+</li>
+<li><p>Cookie</p>
+</li>
+<li><p>Session</p>
+</li>
+</ul>
+<h1 id="Spring-5"><a href="#Spring-5" class="headerlink" title="Spring 5"></a>Spring 5</h1><ul>
+<li><p>IOC</p>
+</li>
+<li><p>AOP</p>
+</li>
+<li><p>事务</p>
+</li>
+</ul>
+<h1 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h1><ul>
+<li>MVC？</li>
+<li>请求与响应</li>
+<li>Restful API</li>
+<li>拦截器</li>
+<li>配置</li>
+<li>执行过程</li>
+</ul>
+<h1 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h1><p>…….</p>
+<h1 id="MyBatis-Plus"><a href="#MyBatis-Plus" class="headerlink" title="MyBatis Plus"></a>MyBatis Plus</h1><p>…….</p>
+<h1 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h1><p>…….</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/07/CentOS-7%20%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/10/07/CentOS-7%20%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-10-07 19:22:01" itemprop="dateCreated datePublished" datetime="2022-10-07T19:22:01+08:00">2022-10-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-06-30 10:18:39" itemprop="dateModified" datetime="2022-06-30T10:18:39+08:00">2022-06-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="CentOS-7-安装教程"><a href="#CentOS-7-安装教程" class="headerlink" title="CentOS-7 安装教程"></a>CentOS-7 安装教程</h2><hr>
+<p>下载地址：</p>
+<p><a target="_blank" rel="noopener" href="http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/">centos-7.9.2009-isos-x86_64安装包下载_开源镜像站-阿里云 (aliyun.com)</a></p>
+<p>l 检查BIOS虚拟化支持</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018068.jpg" alt="img"></p>
+<p>l 新建虚拟机</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018375.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018472.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018671.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018775.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018152.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018342.jpg" alt="img"></p>
+<p>l 配置虚拟机的内存</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018533.jpg" alt="img"></p>
+<p>l 配置处理器， <strong>分配的处理器内核多，虚拟机速度</strong>快</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018550.jpg" alt="img"></p>
+<p>l 配置网络</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018126.jpg" alt="img"><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018386.jpg" alt="img"></p>
+<p>l 正式安装Centos系统</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018125.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018110.jpg" alt="img"></p>
+<p>l 说明: 选择第一个，不需要 Test this media ，否则检测时间很长</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018133.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018136.jpg" alt="img"></p>
+<p>l 选择安装软件，默认是最小化安装.</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018193.jpg" alt="img"></p>
+<p>l 软件选择(套餐)，需要什么，安装好后也可以再安装。<strong>也可以根据需要勾选附加</strong>项</p>
+<p>， 比如这里我勾选了兼容库和基本开发工具(jdk,gcc), 安装好后，也可以卸载，更新等操作</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018225.jpg" alt="img"></p>
+<p>l 安装位置，进行分区操作</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018499.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018510.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018526.jpg" alt="img"></p>
+<p>l 先指定&#x2F;boot  分区，即引导分区，大小为1G, 然后<strong>点击添加挂载点</strong>.</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018534.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018563.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018297.jpg" alt="img"></p>
+<p>l 指定swap分区设备类型和文件系统</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018343.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018349.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018360.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018366.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018132.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018165.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018170.jpg" alt="img"></p>
+<p>l 设置网络和主机名, 安装好后也可以设置</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018204.jpg" alt="img"></p>
+<p>l 设置你的主机名，然后点击完成即可.</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018205.jpg" alt="img"></p>
+<p>l 点击开始安装就开始了</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018542.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018933.jpg" alt="img"></p>
+<p>l 注意：在实际生产环境，密码一定要复杂，否则容易造成安全隐患</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018019.jpg" alt="img"></p>
+<p>l 创建其它用户，也可以安装成功后，再创建</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018058.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018062.jpg" alt="img"></p>
+<p>l 完成后面的设置</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018074.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018274.jpg" alt="img"></p>
+<p>l 默认以普通用户登录,可以切换成root, 点击未列出</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018676.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018697.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018698.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018789.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018810.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018882.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018264.jpg" alt="img"></p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018294.jpg" alt="img"></p>
+<p>l 连接网络，就可以上网了</p>
+<p><img src="https://imgs-1308612147.cos.ap-shanghai.myqcloud.com/images/202206301018436.jpg" alt="img"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
